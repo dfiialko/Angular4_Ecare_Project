@@ -48,3 +48,6 @@ th, td
 }
 
 
+#tableContent span{
+    margin-right: 5px;
+}

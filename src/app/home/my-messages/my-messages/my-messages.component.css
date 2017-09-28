@@ -51,7 +51,9 @@
     width:90%;
     font-weight: bold;
 }
-
+#messageTable span{
+    margin-right: 5px;
+}
 th
 {
     padding:15px;

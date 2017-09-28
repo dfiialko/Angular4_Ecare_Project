@@ -1,0 +1,112 @@
+#libraryHeader
+{
+   width:100%;
+}
+
+#libraryHeader h3
+{
+   position: relative;
+   font-weight: bold;
+   font-size: 18px;
+   padding: 40px;
+   padding-bottom: 0px;
+   float: left;
+}
+
+#addContent
+{
+   float: right;
+   padding-right:80px;
+   padding-top:45px;
+}
+
+#addContent a
+{
+   padding:20px;
+   padding-left: 50px;
+   padding-right: 50px;
+   font-weight: bold;
+}
+
+.btn-primary
+{
+   background-color: #CD1948 ;
+   border:#FF0043 ;
+}
+
+#add-content-btn{
+   float: right;
+   padding: 15px;
+
+}
+#library-menu-area{
+   padding:50px;
+   padding-left: 50px;
+   width: 500px;
+   position: relative;
+   top:50px;
+}
+.library-button{
+   padding: 10px;
+   font-weight: 700;
+   font-size: 15px;
+   color: rgba(97,108,112,1);
+   background-color: rgba(229,229,229,1);
+}
+.library-button:focus{
+   color:white;
+   background-color: rgba(93, 102, 111, 1);
+}
+#library-cards-container{
+   border-radius: 10px;
+   border: solid 1px;
+   width:95%;
+   height: 670px;
+   margin: 0 auto;
+   border-color: rgba(223, 223, 223, 1);
+}
+
+#library-cards-container li{
+   list-style: none;
+}
+#library-cards-container ul{
+   display: inline-block;
+   width:320px;
+   height: 320px;
+   padding: 0px;
+   margin-left:20px;
+   margin-right: 20px;
+}
+#library-cards-container img{
+   width:300px;
+   margin: 30px;
+}
+#library-cards-container a{
+   color:#CD1948 ;
+   font-weight: bold;
+   text-decoration: underline;
+}
+
+#library-footer{
+   clear: both;
+   position: relative;
+   left:40px;
+   top: 30px;
+}
+#library-footer a{
+   color: black;
+   margin: 10px;
+}
+.card_description{
+   float: left;
+   display: block;
+   margin-left: 30px;
+}
+#edit-card{
+   float: right;
+}
+.btn-primary
+{
+   background-color: #CD1948 ;
+   border:#FF0043 ;
+}

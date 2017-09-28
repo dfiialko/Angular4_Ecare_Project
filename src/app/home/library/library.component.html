@@ -1,0 +1,35 @@
+<div id="library-container">
+    
+     <div id="libraryHeader">
+    
+       <h3>Educational material that will help you understand your condition and treatment</h3>
+    
+       <div id="addContent">
+         <a routerLink="../addPatient" class="btn btn-primary"> + ADD CONTENT</a>
+       </div><br>
+     </div>
+    
+     <div id="library-main-area">
+       <div id="library-menu-area">
+         <button md-button (click)="displayAll()" class="library-button" #focusButton>VIEW ALL</button>
+         <button md-button [mdMenuTriggerFor]="menu" class="library-button">{{menuButton}}</button>
+         <md-menu #menu="mdMenu">
+           <button md-menu-item *ngFor="let category of categories;let i = index" (click)="changeCategory(category)">{{category}}</button>
+         </md-menu>
+       </div>
+     </div>
+     <div id="library-cards-container">
+       <ul *ngFor="let card of cards; let i = index">
+         <li>
+           <img src="../../../assets/{{card}}.jpg" />
+         </li>
+         <li class="card_description"><b>Taking your blood pressure</b></li>
+         <li class="card_description" id="edit-card"><a>EDIT</a></li>
+       </ul>
+       <span class="clear"></span>
+     </div>
+     <div id="library-footer">
+       <span class="glyphicon glyphicon-download-alt"></span><a href="">Archieve</a>
+       <span class="glyphicon glyphicon-trash"></span><a href="">Delete</a>
+     </div>
+    </div>

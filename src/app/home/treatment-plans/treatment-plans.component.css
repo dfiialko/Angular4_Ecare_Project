@@ -1,0 +1,118 @@
+#plansHeader
+{
+   width:100%;
+}
+
+#plansHeader h3
+{
+   position: relative;
+   font-weight: bold;
+   padding: 40px;
+   float: left;
+}
+
+#createTreatmentPlan
+{
+   float: right;
+   padding-right:80px;
+   padding-top:45px;
+}
+
+#createTreatmentPlan a
+{
+   padding:20px;
+   padding-left: 50px;
+   padding-right: 50px;
+   font-weight: bold;
+}
+
+.btn-primary
+{
+   background-color: #CD1948 ;
+   border:#FF0043 ;
+}
+
+#plansTableMenu
+{
+   position: relative;
+   left: 50px;
+   top:150px;
+   width:500px;
+}
+
+#plansTableMenu a
+{
+   padding:15px;
+}
+
+#plansTableContainer
+{
+   border-radius: 10px;
+   border: solid 1px;
+   width:95%;
+   margin: 45px;
+   margin-top:150px;
+   border-color: rgba(223, 223, 223, 1);
+}
+
+#plansTable
+{
+   margin:20px;
+   width:90%;
+   font-weight: bold;
+}
+
+th
+{
+   padding:15px;
+   padding-top:25px;
+   border-bottom: solid 3px lightgray;
+}
+
+td
+{
+   padding:15px;
+   border-top: solid 2px lightgray;
+   color:grey;
+}
+
+th, td
+{
+   padding-right: 74px;
+}
+
+.glyphicon
+{
+   padding:8px;
+}
+
+#bottomMenu
+{
+   margin-left: 40px;
+}
+
+#bottomMenu a
+{
+   color:black;
+}
+
+.treatment-plan-button{
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: rgba(97,108,112,1);
+    background-color: rgba(229,229,229,1);
+ }
+ 
+ .caret
+ {
+    margin:10px;
+ }
+.treatment-plan-button:focus{
+   color:white;
+   background-color: rgba(93, 102, 111, 1);
+}
+#plans-container-menu-table{
+    position: relative;
+    top:-120px;
+}

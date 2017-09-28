@@ -1,0 +1,50 @@
+th
+{
+    padding:15px;
+    padding-top:25px;
+    border-bottom: solid 3px lightgray;
+}
+
+td
+{
+    padding:15px;
+    border-top: solid 2px lightgray;
+}
+
+th, td
+{
+    padding-right: 74px;
+}
+
+#tableContent img
+{
+   height:25px;
+}
+
+#tableContent
+{
+    padding:20px;
+    font-weight: bold;
+}
+
+#table
+{
+    position: relative;
+    margin:70px;
+    border-radius: 20px;
+    border: solid 1px;
+    border-color: rgba(223, 223, 223, 1);
+}
+
+.glyphicon
+{
+    padding-right: 5px;
+    font-size:15px;
+}
+
+#patientStatus
+{
+    text-align: center;
+}
+
+

@@ -1,0 +1,92 @@
+#messageContainer
+{
+    margin-top:50px;
+    margin-left: 18px;
+}   
+
+#seachMessage
+{
+    position: relative;
+    height: 5%;
+    width:500px;
+}
+
+#searchMessage li
+{
+    display: inline;
+    padding:10px;
+    font-size: 21px;
+}
+
+#searchMessage li a
+{
+    color:black;
+}
+
+#searchBar
+{
+    position: relative;
+    left:600px;
+    bottom:40px;
+}
+
+.line
+{
+    color:lightgray;
+}
+
+#messageTableContainer
+{
+    border-radius: 10px;
+    border: solid 1px;
+    width:95%;
+    margin: 45px;
+    margin-top:20px;
+    border-color: rgba(223, 223, 223, 1);
+}
+
+#messageTable
+{
+    margin:20px;
+    width:90%;
+    font-weight: bold;
+}
+
+th
+{
+    padding:15px;
+    padding-top:25px;
+    border-bottom: solid 3px lightgray;
+}
+
+td
+{
+    padding:15px;
+    border-top: solid 2px lightgray;
+}
+
+th, td
+{
+    padding-right: 74px;
+}
+
+.glyphicon
+{
+    padding:8px;
+}
+
+#bottomMenu
+{
+    margin-left: 40px;
+}
+
+#bottomMenu a
+{
+    color:black;
+}
+
+.btn
+{
+    background-color: #000041;
+}
+

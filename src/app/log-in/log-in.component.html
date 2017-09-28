@@ -1,0 +1,35 @@
+<div id="mainContainer">
+
+  <div id="logInContainer" *ngIf="loggedIn === false">
+
+    <img id="e-care" src="./assets/e-care.PNG" alt="e-care">
+
+      <div [ngStyle]="{'display': showhide ? 'none' : 'block'}" style="position:absolute;width:140px;height:140px;right:47%;top:30%;" class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+    <div class="form" [ngStyle]="{'opacity': showhide? '1' : '0.1'}">
+      <h4 id="h4">
+        <div class="formHeader">LOGIN TO YOUR ACCOUNT </div>
+      </h4>
+        <form >
+        <div id="input">
+          <span id="emailIcon" class="glyphicon glyphicon-envelope" width=50></span>
+          <input #email type="text" name="email" placeholder="Email Address" size=40 required [(ngModel)]="test"><br>
+          
+          <span id="passwordIcon" class="glyphicon glyphicon-lock"></span>
+          <input #password type="password" placeholder="Password" size=40 required><br>
+          <h4 *ngIf="authenticated === false">Email or password is incorrect *</h4>
+        </div>
+
+        <span id="submit"> <button type="submit" class="btn btn-primary btn-lg" (click)="logInClick()">LOGIN</button> </span>
+      </form>
+      
+      <div id="forgetPassword">
+        <a href="#" (click)="resetPasswordClicked()">Forget your password?</a>
+      </div>
+
+
+</div>

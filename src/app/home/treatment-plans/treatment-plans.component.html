@@ -1,0 +1,43 @@
+<div id="plansContainer">
+    <div id="plansHeader">
+   
+      <h3>Total Treatment Plans Created: {{plans.length}}</h3>
+   
+      <div id="createTreatmentPlan">
+        <a routerLink="../addPatient" class="btn btn-primary"> + CREATE TREATMENT PLAN</a>
+      </div><br>
+    </div>
+   <div id="plans-container-menu-table">
+    <div id="plansTableMenu">
+            <button md-button (click)="displayAll()" class="treatment-plan-button" #focusButton>VIEW ALL</button>
+            <button md-button [mdMenuTriggerFor]="menu" class="treatment-plan-button">{{menuButton}}<span class="caret"></span></button>
+            <md-menu #menu="mdMenu">    
+              <button md-menu-item id="button-md"*ngFor="let category of categories;let i = index" (click)="changeCategory(category)">{{category}}</button>
+            </md-menu>
+      </div>
+   
+    <div id="plansTableContainer">
+   
+      <table id="plansTable">
+        <tr>
+          <th>Treatment Plan</th>
+          <th>Date Created</th>
+          <th>Created By</th>
+          <th>Total Patient Enrolled</th>
+        </tr>
+   
+        <tr *ngFor="let plan of plans">
+          <td><input type="checkbox" name="from" value="plan.from"><u>{{plan.treatmentPlan}}</u></td>
+          <td>{{plan.dateCreated}}</td>
+          <td>{{plan.createdBy}}</td>
+          <td>{{plan.totalPatientsEnrolled}}</td>
+        </tr>
+      </table>
+    </div>
+  
+    <div id="bottomMenu">
+      <span class="glyphicon glyphicon-download-alt"></span><a href="">Archieve</a>
+      <span class="glyphicon glyphicon-trash"></span><a href="">Delete</a>
+    </div>
+   </div>
+  </div>

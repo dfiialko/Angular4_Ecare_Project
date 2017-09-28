@@ -1,0 +1,40 @@
+<div id="mainContainer">
+  <div id="signInContainer">
+    
+    <img id="e-care" src="./assets/e-care.PNG" alt="e-care">
+    
+    <div class="form">
+      <h4 id="h4"> <div class="formHeader">PATIENTS </div></h4>
+    
+      <form>  
+        <div id="input">
+          <span id="emailIcon" class="glyphicon glyphicon-envelope" width=50></span>
+          <input type="text" name="email" placeholder="Email Address" size=40 required [(ngModel)]="signInUserName"><br>
+       
+          <span id="passwordIcon" class="glyphicon glyphicon-user"></span>
+          <input type="text" name="name" placeholder="Name" size=40 required><br>
+
+          <span id="phoneIcon" class="glyphicon glyphicon-phone"></span>
+          <input type="text" name="birth" placeholder="Date of Birth dd/mm/yyyy" size=40 required><br>
+
+          <span id="adressIcon" class="glyphicon glyphicon-globe"></span>
+          <input type="text" name="phone" placeholder="Phone" size=40 required>
+          <br>
+
+          <!-- <div id="genderIcon" class="glyphicon glyphicon-user">
+            <span class="radios">
+          <label for=""><input type="radio" name="radio" value="">Male</label>
+          <label for=""><input type="radio" name="radio" value="">Female</label></span>
+          </div> -->
+
+        </div>
+    
+      <div id="submit"> <button (click)="addPatient()" class="btn btn-primary btn-lg">ADD PATIENT</button> </div> 
+      </form>
+      
+    </div>
+    
+    <!-- <p id="getStarted">ARE YOU ALREADY A MEMBER? <a href="#" (click)="logInClicked()">LOG IN</a></p> -->
+    
+    </div>
+</div>

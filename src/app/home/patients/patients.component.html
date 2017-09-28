@@ -1,0 +1,41 @@
+<div *ngIf="page==='patients'">
+<div id="patientContainer">
+        <div id="patientsHeader">   
+         <h3>Total Patients Enrolled: {{users.length}}</h3>   
+         <div id="addPatient">
+            <a routerLink="../addPatient" class="btn btn-primary">Add Patient</a>
+          </div><br>       
+        </div>    
+        <hr id="patient-header-hr">
+       <div id="patientSearch">
+          <input type="text" placeholder="Search" size=55>
+          <button class="btn btn-primary">Go</button>
+        </div>
+        <div id="patient-profile-container">
+          <div *ngFor="let user of users; let i = index">
+            <div class="patientProfile">
+              <span class="glyphicon glyphicon-user"></span>
+              <button md-button [mdMenuTriggerFor]="menu" id="menu-button"><md-icon>build</md-icon></button>
+              <ul>
+                <li id="md-menu">
+                  <md-menu #menu="mdMenu">
+                    <button md-menu-item type="button" (click)="deleteUser(user._id)" routerLink="../patients">DELETE</button>
+                    <button md-menu-item type="button"  (click)="getUser(user)">UPDATE</button>
+                  </md-menu>
+                </li>
+                <li>
+                  <h4>{{user.name}}</h4>
+                </li>
+                <li><span class="glyphicon glyphicon-envelope"></span>{{user.email}}</li>
+                <li><span class="glyphicon glyphicon-calendar"></span>{{user.birth}}</li>
+                <li>P: {{user.phone}} </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="page==='updatePatients'">
+    <app-update-patients [patient]="patient" [users]="users" (navigationBackToPatient)="changePage($event)"></app-update-patients>
+    </div>

@@ -24,7 +24,7 @@ export class PasswordResetComponent implements OnInit {
 
   sendEmail()
   {
-    return "http://localhost:3030/submit/";
+    return "http://208.75.74.123:3030/submit/";
   }
 
   ngOnInit() {

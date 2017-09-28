@@ -11,7 +11,7 @@
     },
     "description": "# Overview\nThe e-CareSmart API is a RESTful API that provides data exchange between the e-CareSmart platform's mobile and web applications.\n\nThe e-CareSmart API supports JSON formatted requests and responses for sending and receicing data. Data communication is done over a secured SSL channel.\n\n# Authentication\n"
   },
-  "host": "localhost:10020",
+  "host": "208.75.74.123:10020",
   "basePath": "/",
   "schemes": [
     "http",

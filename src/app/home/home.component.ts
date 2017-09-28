@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer } from '@angular/core';
 import { PlatformLocation } from '@angular/common'
 @Component({
   selector: 'app-home',
@@ -8,12 +8,11 @@ import { PlatformLocation } from '@angular/common'
 export class HomeComponent implements OnInit {
 
   @Input() homeUserName;
-
   @Output() logInEmitterHome = new EventEmitter<any>();
 
   component = 'PATIENTS';
-
-  constructor(location: PlatformLocation) {
+changed = true;
+  constructor(location: PlatformLocation,renderer:Renderer,li:ElementRef) {
     location.onPopState(()=>{console.log("pressed")});
    }
 

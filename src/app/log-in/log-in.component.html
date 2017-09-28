@@ -4,12 +4,7 @@
 
     <img id="e-care" src="./assets/e-care.PNG" alt="e-care">
 
-      <div [ngStyle]="{'display': showhide ? 'none' : 'block'}" style="position:absolute;width:140px;height:140px;right:47%;top:30%;" class="sk-folding-cube">
-      <div class="sk-cube1 sk-cube"></div>
-      <div class="sk-cube2 sk-cube"></div>
-      <div class="sk-cube4 sk-cube"></div>
-      <div class="sk-cube3 sk-cube"></div>
-    </div>
+    <app-spinner [ngStyle]="{'display': showhide ? 'none' : 'block'}" style="position:absolute;width:140px;height:140px;right:47%;top:30%;"></app-spinner>
     <div class="form" [ngStyle]="{'opacity': showhide? '1' : '0.1'}">
       <h4 id="h4">
         <div class="formHeader">LOGIN TO YOUR ACCOUNT </div>

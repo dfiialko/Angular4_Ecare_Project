@@ -1,3 +1,4 @@
+import { SpinnerComponent } from './../shared/spinner/spinner.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -58,7 +59,8 @@ const appRoutes: Routes = [
     HealthResourcesComponent,
     CareProviderDirectoryComponent,
     AddPatientComponent,
-    UpdatePatientsComponent
+    UpdatePatientsComponent,
+    SpinnerComponent
 ],
   imports: [
     BrowserModule,

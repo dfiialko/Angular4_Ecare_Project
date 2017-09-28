@@ -10,7 +10,7 @@ info:
     # Overview
     The e-CareSmart API is a RESTful API that provides data exchange between the e-CareSmart platform's mobile and web applications.
     
-    The e-CareSmart API supports JSON formatted requests and responses for sending and receiving data. POST bodies can be sent as application/json, application/x-www-form-urlencoded, or multipart/form-data. However the API will only return JSON. The API lives at https://localhost/api/. All requests must use HTTPS.
+    The e-CareSmart API supports JSON formatted requests and responses for sending and receiving data. POST bodies can be sent as application/json, application/x-www-form-urlencoded, or multipart/form-data. However the API will only return JSON. The API lives at https://208.75.74.123/api/. All requests must use HTTPS.
     
     # Authentication
     [OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749) is the main means of authorising requests to the API.

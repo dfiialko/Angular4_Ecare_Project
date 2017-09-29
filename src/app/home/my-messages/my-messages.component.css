@@ -86,3 +86,7 @@ td
     background-color: #000041;
 }
 
+.archieve, .delete
+{
+    padding-left: 5px;
+}

@@ -3,7 +3,7 @@ import { Component, OnInit, Input, ViewChild, EventEmitter, Output } from '@angu
 import { DataSource } from "@angular/cdk/collections";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/observable/of';
-import {MdPaginator} from '@angular/material';
+
 @Component({
   selector: 'app-update-patients',
   templateUrl: './update-patients.component.html',

@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/css/flaticon.css",
+        "../src/css/flaticon.css",
         "styles.css"
       ],
       "scripts": [],

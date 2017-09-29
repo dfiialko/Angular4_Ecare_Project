@@ -20,7 +20,7 @@ export class DataService {
   // addUser(data)
   // {
   //   console.log("data.service.ts");
-  //   return this._http.post('http://208.75.74.123:10020/api/addUser',data).map(res=>res.json());
+  //   return this._http.post('http://localhost:10020/api/addUser',data).map(res=>res.json());
   // }
 
   deleteUser(userID)

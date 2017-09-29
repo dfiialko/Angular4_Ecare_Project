@@ -17,20 +17,22 @@
       </div>
    
     <div id="plansTableContainer">
-   
       <table id="plansTable">
         <tr>
-          <th>Treatment Plan</th>
-          <th>Date Created</th>
-          <th>Created By</th>
-          <th>Total Patient Enrolled</th>
+          <th class="checkBox"><md-checkbox class="example-margin" (click)="checkAll()"></md-checkbox></th>
+          <th class="messages">Treatment Plan </th>
+          <th class="messages">Date Created</th>
+          <th class="messages">Created By</th>
+          <th class="messages">Total Patient Enrolled</th>
         </tr>
-   
+
         <tr *ngFor="let plan of plans">
-          <td><input type="checkbox" name="from" value="plan.from"><u>{{plan.treatmentPlan}}</u></td>
-          <td>{{plan.dateCreated}}</td>
-          <td>{{plan.createdBy}}</td>
-          <td>{{plan.totalPatientsEnrolled}}</td>
+          <!-- <td><input type="checkbox" name="from" value="plan.from"> {{plan.treatmentPlan}}</td> -->
+          <td class="checkBox"><md-checkbox class="example-margin" checked={{check}}></md-checkbox></td>
+          <td class="messages">{{plan.treatmentPlan}}</td>
+          <td class="messages">{{plan.dateCreated}}</td>
+          <td class="messages">{{plan.createdBy}}</td>
+          <td class="messages">{{plan.totalPatientsEnrolled}}</td>
         </tr>
       </table>
     </div>

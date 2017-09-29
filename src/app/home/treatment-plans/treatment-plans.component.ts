@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild, ViewChildren, ElementRef, Renderer } from
  styleUrls: ['./treatment-plans.component.css']
 })
 export class TreatmentPlansComponent implements OnInit {
-
+check = null;
  plans: Array<any> = [{
    treatmentPlan: 'Type 1 Diabetes', dateCreated: '2015-03-01 10:30AM',
    createdBy: 'Nurse Fiona Galaghar', totalPatientsEnrolled: '20'
@@ -38,7 +38,14 @@ export class TreatmentPlansComponent implements OnInit {
    //Add 'implements AfterViewInit' to the class.
    this.rendered.invokeElementMethod(this.focusButton,'focus');
  }
-
+ checkAll() {
+  if (this.check === null) {
+    this.check = 'checked';
+  }
+  else {
+    this.check = null;
+  }
+}
  ngOnInit() {
  }
 

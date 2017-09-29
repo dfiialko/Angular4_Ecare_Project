@@ -30,7 +30,7 @@ var config = {
 
 //connect to dev database
 mongoose.Promise = global.Promise;
-var mongoUri = 'mongodb://208.75.74.123/ecaresmart-api-dev';
+var mongoUri = 'mongodb://localhost/ecaresmart-api-dev';
 mongoose.connect(mongoUri, { useMongoClient: true});
 var conn = mongoose.connection;
 conn.on('error', function (err) {

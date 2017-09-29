@@ -8,7 +8,7 @@
         "JWT_REFRESH_TOKEN_EXPIRY_SECONDS" : 1209600
     },
     "mongoose": {
-        "uri": "mongodb://208.75.74.123/ecaresmart-api-dev"
+        "uri": "mongodb://localhost/ecaresmart-api-dev"
     },
     "default": {
         "api": {

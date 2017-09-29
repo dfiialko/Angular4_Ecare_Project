@@ -8,7 +8,7 @@
   "license": "",
   "main": "app.js",
   "dependencies": {
-    "@angular/animations": "^4.4.3",
+    "@angular/animations": "^4.4.4",
     "@angular/cdk": "github:angular/cdk-builds",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",

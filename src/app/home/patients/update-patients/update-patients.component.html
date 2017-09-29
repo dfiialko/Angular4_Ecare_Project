@@ -23,66 +23,66 @@
       </ul>
     </div>
     <div id="patient-tabs">
-      <md-tab-group class="demo-tab-group">
-        <md-tab label="Treatment Plan">
+      <mat-tab-group class="demo-tab-group">
+        <mat-tab label="Treatment Plan">
           <div class="demo-tab-content">
             <button class="btn btn-primary" id="add-treatment-task-btn">Add Treatment Task</button>
             <div class="example-container mat-elevation-z8">
-              <md-table #table [dataSource]="dataSource">
+              <mat-table #table [dataSource]="dataSource">
                 <!-- Position Column -->
-                <ng-container mdColumnDef="treatmentGroup">
-                  <md-header-cell *mdHeaderCellDef> Treatment Group </md-header-cell>
-                  <md-cell *mdCellDef="let user"> {{user.treatmentGroup}} </md-cell>
+                <ng-container matColumnDef="treatmentGroup">
+                  <mat-header-cell *matHeaderCellDef> Treatment Group </mat-header-cell>
+                  <mat-cell *matCellDef="let user"> {{user.treatmentGroup}} </mat-cell>
                 </ng-container>
 
                 <!-- Name Column -->
-                <ng-container mdColumnDef="treatmentPlan">
-                  <md-header-cell *mdHeaderCellDef> Treatment Plan </md-header-cell>
-                  <md-cell *mdCellDef="let user"> {{user.treatmentPlan}} </md-cell>
+                <ng-container matColumnDef="treatmentPlan">
+                  <mat-header-cell *matHeaderCellDef> Treatment Plan </mat-header-cell>
+                  <mat-cell *matCellDef="let user"> {{user.treatmentPlan}} </mat-cell>
                 </ng-container>
 
                 <!-- Weight Column -->
-                <ng-container mdColumnDef="dateEnrolled">
-                  <md-header-cell *mdHeaderCellDef> Date Enrolled </md-header-cell>
-                  <md-cell *mdCellDef="let user"> {{user.dateEnrolled}} </md-cell>
+                <ng-container matColumnDef="dateEnrolled">
+                  <mat-header-cell *matHeaderCellDef> Date Enrolled </mat-header-cell>
+                  <mat-cell *matCellDef="let user"> {{user.dateEnrolled}} </mat-cell>
                 </ng-container>
 
                 <!-- Color Column -->
-                <ng-container mdColumnDef="status">
-                  <md-header-cell *mdHeaderCellDef> Status </md-header-cell>
-                  <md-cell *mdCellDef="let user"> {{user.status}} </md-cell>
+                <ng-container matColumnDef="status">
+                  <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                  <mat-cell *matCellDef="let user"> {{user.status}} </mat-cell>
                 </ng-container>
                 <!-- Color Column -->
-                <ng-container mdColumnDef="dateCompleted">
-                  <md-header-cell *mdHeaderCellDef> Date Completed </md-header-cell>
-                  <md-cell *mdCellDef="let user"> {{user.dateCompleted}} </md-cell>
+                <ng-container matColumnDef="dateCompleted">
+                  <mat-header-cell *matHeaderCellDef> Date Completed </mat-header-cell>
+                  <mat-cell *matCellDef="let user"> {{user.dateCompleted}} </mat-cell>
                 </ng-container>
 
-                <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
 
-                <md-row *mdRowDef="let row; columns: displayedColumns;">
-                  <button md-button >BUTTON</button></md-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;">
+                  <button mat-button >BUTTON</button></mat-row>
                   
-              </md-table>
+              </mat-table>
             </div>
           </div>
-        </md-tab>
-        <md-tab label="Treatment Data">
+        </mat-tab>
+        <mat-tab label="Treatment Data">
           <div class="demo-tab-content">
             No Content
           </div>
-        </md-tab>
-        <md-tab label="Messages">
+        </mat-tab>
+        <mat-tab label="Messages">
           No content
-        </md-tab>
-        <md-tab label="Care Providers">
+        </mat-tab>
+        <mat-tab label="Care Providers">
           <div class="demo-tab-content">
           </div>
-        </md-tab>
-        <md-tab label="Tasks">
+        </mat-tab>
+        <mat-tab label="Tasks">
           No content
-        </md-tab>
-      </md-tab-group>
+        </mat-tab>
+      </mat-tab-group>
     </div>
   </div>
 </div>

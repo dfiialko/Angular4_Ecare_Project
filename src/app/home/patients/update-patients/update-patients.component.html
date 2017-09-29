@@ -5,7 +5,7 @@
            <h3>Total Patients Enrolled: {{users.length}}</h3>
       
            <div id="addPatient">
-              <a routerLink="../addPatient" class="btn btn-primary">Add Patient</a>
+              <a routerLink="../addPatient" class="btn btn-primary" id="add-patient-button">Add Patient</a>
             </div><br>
   </div>
   <hr>
@@ -17,9 +17,9 @@
       <img src="../../../../assets/profile_user.jpg" alt="patient image" />
       <ul>
         <li><b>{{patient.name}}</b></li>
-        <li><span class="glyphicon glyphicon-envelope"></span>{{patient.email}}</li>
-        <li><span class="glyphicon glyphicon-calendar"></span>{{patient.phone}}</li>
-        <li><span class="glyphicon glyphicon-lock"></span>key</li>
+        <li><span class="flaticon-envelope"></span>{{patient.email}}</li>
+        <li><span class="flaticon-phone-call"></span>{{patient.phone}}</li>
+        <li><span class="flaticon-padlock"></span>key</li>
       </ul>
     </div>
     <div id="patient-tabs">

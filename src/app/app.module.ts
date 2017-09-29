@@ -1,3 +1,4 @@
+import { SpinnerComponent } from './../shared/spinner/spinner.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { PatientsComponent } from './home/patients/patients.component';
 import { MyAlertsComponent } from './home/my-alerts/my-alerts.component';
-import { MyMessagesComponent } from './home/my-messages/my-messages/my-messages.component';
+import { MyMessagesComponent } from './home/my-messages/my-messages.component';
 import { TreatmentAlertsComponent } from './home/treatment-alerts/treatment-alerts.component';
 import { TreatmentTasksComponent } from './home/treatment-tasks/treatment-tasks.component';
 import { TreatmentPlansComponent } from './home/treatment-plans/treatment-plans.component';
@@ -21,7 +22,7 @@ import { AddPatientComponent } from './home/patients/add-patient/add-patient.com
 import { DataService } from './data.service';
 
 //Material Designs
-import {MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdTableModule, MdTabsModule,MatProgressSpinnerModule } from '@angular/material';
+import {MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdTableModule, MdTabsModule,MatProgressSpinnerModule, MdCheckboxModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdatePatientsComponent } from './home/patients/update-patients/update-patients.component';
 
@@ -58,7 +59,8 @@ const appRoutes: Routes = [
     HealthResourcesComponent,
     CareProviderDirectoryComponent,
     AddPatientComponent,
-    UpdatePatientsComponent
+    UpdatePatientsComponent,
+    SpinnerComponent
 ],
   imports: [
     BrowserModule,
@@ -73,7 +75,8 @@ const appRoutes: Routes = [
      MdTableModule,
      BrowserAnimationsModule ,
      MdTabsModule,
-     MatProgressSpinnerModule
+     MatProgressSpinnerModule,
+     MdCheckboxModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

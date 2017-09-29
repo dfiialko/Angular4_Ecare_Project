@@ -95,3 +95,13 @@
     height: 50%;
     clear: both;
 }
+#patient-profile-container span{
+    margin-left: -10px;
+    margin-right: 5px;
+}
+#user_profile_glyph{
+    height:130px;
+}
+#add-patient-button{
+    padding:10px;
+}

@@ -58,7 +58,7 @@
 #plansTable
 {
    margin:20px;
-   width:90%;
+   width:95%;
    font-weight: bold;
 }
 
@@ -107,6 +107,11 @@ th, td
  .caret
  {
     margin:10px;
+ }
+ .checkBox
+ {
+     padding-right: 0px;
+     width:45px;
  }
 .treatment-plan-button:focus{
    color:white;

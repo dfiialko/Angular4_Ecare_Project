@@ -1,0 +1,46 @@
+<div id="messageContainer">
+  <div id="searchMessage">
+  <ul>
+    <li><a href="">Inbox({{messages.length}})</a></li>
+    <li class="line">|</li>
+    <li><a href="">Archive</a></li>
+    <li class="line">|</li>
+    <li><a href="">Trash</a></li>
+  </ul>
+
+  <form id="searchBar" action="">
+    <input type="text" name="search" placeholder=" Search Message" size="50" required>
+    <button type="submit" class="btn btn-primary">SEARCH</button>
+  </form>
+</div>
+
+<div id="messageTableContainer">
+  <table id="messageTable">
+    <tr>
+      <th class="checkBox"><md-checkbox class="example-margin" (click)="checkAll()"></md-checkbox></th>
+      <th class="messages">From</th>
+      <th class="messages">Date Received</th>
+      <th class="messages">Subject</th>
+      <th class="messages">Status</th>
+      <th class="messages">Reply</th>
+    </tr>
+
+    <tr *ngFor="let message of messages">
+      <!-- <td><input type="checkbox" name="from" value="message.from"> {{message.from}}</td> -->
+
+      <td class="checkBox"><md-checkbox class="example-margin" checked={{check}}></md-checkbox></td>
+      <td class="messages">{{message.from}}</td>
+      <td class="messages">{{message.dateReceived}}</td>
+      <td class="messages">{{message.subject}}</td>
+      <td class="messages">{{message.status}}</td>
+      <td class="messages"><span class="flaticon-envelope"></span><a href="#">{{message.reply}}</a></td>
+    </tr>
+  </table>
+</div>
+
+<div id="bottomMenu">
+    <span class="flaticon-download-1"></span><a href="">Archieve</a>
+    <span class="flaticon-garbage"></span><a href="">Delete</a>
+</div>
+
+</div>

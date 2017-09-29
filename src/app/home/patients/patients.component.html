@@ -3,7 +3,7 @@
         <div id="patientsHeader">   
          <h3>Total Patients Enrolled: {{users.length}}</h3>   
          <div id="addPatient">
-            <a routerLink="../addPatient" class="btn btn-primary">Add Patient</a>
+            <a routerLink="../addPatient" class="btn btn-primary" id="add-patient-button">Add Patient</a>
           </div><br>       
         </div>    
         <hr id="patient-header-hr">
@@ -14,8 +14,8 @@
         <div id="patient-profile-container">
           <div *ngFor="let user of users; let i = index">
             <div class="patientProfile">
-              <span class="glyphicon glyphicon-user"></span>
-              <button md-button [mdMenuTriggerFor]="menu" id="menu-button"><md-icon>build</md-icon></button>
+              <span class="glyphicon glyphicon-user" id="user_profile_glyph"></span>
+              <button md-button [mdMenuTriggerFor]="menu" id="menu-button"><span class="flaticon-settings"></span></button>
               <ul>
                 <li id="md-menu">
                   <md-menu #menu="mdMenu">
@@ -26,9 +26,9 @@
                 <li>
                   <h4>{{user.name}}</h4>
                 </li>
-                <li><span class="glyphicon glyphicon-envelope"></span>{{user.email}}</li>
-                <li><span class="glyphicon glyphicon-calendar"></span>{{user.birth}}</li>
-                <li>P: {{user.phone}} </li>
+                <li><span class="flaticon-envelope"></span>{{user.email}}</li>
+                <li><span class="flaticon-heart"></span>{{user.birth}}</li>
+                <li><span class="flaticon-phone-call"></span>P: {{user.phone}} </li>
               </ul>
             </div>
           </div>

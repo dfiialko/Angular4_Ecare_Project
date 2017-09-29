@@ -70,8 +70,7 @@ export class LogInComponent implements OnInit {
 
     this._dataService.logIn(data).subscribe(data =>this.token.push(data),
       error => this.login_attempt(false),
-      () => { this.authenticated = true;this.login_attempt(true) })
-      ;;
+      () => { this.authenticated = true;this.login_attempt(true)});
 
     console.log(this.token);
 

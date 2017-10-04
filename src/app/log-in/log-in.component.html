@@ -1,30 +1,50 @@
-<div id="mainContainer">
-
-  <div id="logInContainer" *ngIf="loggedIn === false">
-
-    <img id="e-care" src="./assets/e-care.PNG" alt="e-care">
-
-    <app-spinner [ngStyle]="{'display': showhide ? 'none' : 'block'}" style="position:absolute;width:140px;height:140px;right:47%;top:30%;"></app-spinner>
-    <div class="form" [ngStyle]="{'opacity': showhide? '1' : '0.1'}">
-      <h4 id="h4">
-        <div class="formHeader">LOGIN TO YOUR ACCOUNT </div>
-      </h4>
-        <form >
-        <div id="input">
-          <span id="emailIcon" class="glyphicon glyphicon-envelope" width=50></span>
-          <input #email type="text" name="email" placeholder="Email Address" size=40 required [(ngModel)]="test"><br>
-          
-          <span id="passwordIcon" class="glyphicon glyphicon-lock"></span>
-          <input #password type="password" placeholder="Password" size=40 required><br>
-          <h4 *ngIf="authenticated === false">Email or password is incorrect *</h4>
-        </div>
-
-        <span id="submit"> <button type="submit" class="btn btn-primary btn-lg" (click)="logInClick()">LOGIN</button> </span>
-      </form>
-      
-      <div id="forgetPassword">
-        <a href="#" (click)="resetPasswordClicked()">Forget your password?</a>
+<div class="container w-100" id="login_container" style="background-color:rgba(25, 40, 63, 1)">
+  <form class="form-horizontal" id="login_form_container">
+      <div class="align-items-center mx-auto text-center w-50" *ngIf="loggedIn === false">         
+          <app-spinner id="login_spinner" [ngStyle]="{'display': showhide ? 'none' : 'block'}"></app-spinner>
+          </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <img class="img-fluid" src="./assets/e-care.PNG" alt="e-care">     
       </div>
-
-
+    </div>
+    <div [ngStyle]="{'opacity': showhide? '1' : '0.1'}" class="container w-50 mx-auto text-center p-0" id="login_form">
+      <div class="row w-100 mx-auto">
+        <div class="col-12 col-xs-12 text-center p-3" id="login_heading">
+            <h4 class="w-100 p-0">
+              LOGIN TO YOUR ACCOUNT
+            </h4>
+          </div>
+        </div>
+    <!--Email Input -->
+    <div class="row mt-5" id="login_email_input_row">
+      <div class="col-md-3 col-sm-2 col-xs-1 text-right ml-0 pl-0 pt-3">
+        <label for="login_email_input" class="flaticon-envelope"></label>
+      </div>
+      <div class="col-md-8 col-sm-9 col-xs-10 text-right mb-3 pt-3" id="login_label_email">
+        <input id="login_email_input" class="form-control" #email type="text" name="email" placeholder="Email Address" size=40 required [(ngModel)]="test">
+      </div>
+    </div>
+    <!--Password Input -->
+    <div class="row">
+      <div class="col-md-3 col-sm-2 col-xs-1 text-right pl-0 ml-0 pt-3">
+        <label for="login_password_input" class="flaticon-padlock"></label>
+      </div>
+      <div class="col-md-8 col-sm-9 col-xs-10 text-right mb-3 pt-3">
+        <input id="login_password_input" class="form-control border-top-0 border-right-0 border-left-0"
+        #password type="password" placeholder="Password" size=40 required>
+      </div>
+    </div>
+    <!-- Error Message -->
+    <div class="row">
+      <div class="col-md-12"><h3 *ngIf="authenticated === false">Email or password is incorrect *</h3></div>
+    </div>
+    <!-- Forgot Password -->
+    <div class="row mt-5 mb-5" id="login_forgot_password">
+        <div class="col-xl-6 col-lg-7 col-md-6 col-sm-6 col-xs-4 text-xl-right text-lg-right text-md-center text-sm-center text-xs-left"><u><a href="#" (click)="resetPasswordClicked()" id="login_forget_password">Forgot your password?</a></u></div>
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-6 text-xl-right text-lg-center text-md-center text-sm-center text-xs-center"><button type="submit" class="btn btn-primary py-3 px-4 mb-3" (click)="logInClick()" id="login_button">LOGIN</button></div>      
+        <div class="col-xl-1 col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
+      </div>
+     </div>    
+  </form>
 </div>

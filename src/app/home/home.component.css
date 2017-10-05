@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  #homeContainer
  {
     max-width:1600px;
@@ -5,6 +6,13 @@
     margin:auto;
  }
  
+=======
+ 
+ #homeContainer{
+     max-width: 1600px;
+     margin:auto;
+ }
+>>>>>>> master
  .flex-column li a
 {
     font-weight: bold;
@@ -14,9 +22,12 @@
  #sidebar
 {   
    min-height: 100%;
+<<<<<<< HEAD
    max-width:400px;
+=======
+   max-width: 400px;
+>>>>>>> master
    overflow: hidden;
-
 } 
 
 .glyphicon

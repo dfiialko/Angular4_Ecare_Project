@@ -16,12 +16,12 @@
       <nav aria-label="Page navigation example" class="col-md-5 col-sm-12 align-bottom text-center">
 
         <ul class="pagination" id="patient_paginator">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" (click)="previousClickPagination()">Previous</a></li>
           <ng-container *ngFor="let user of users;let i=index;">
-            <li class="page-item" *ngIf="i>=4">
-              <a class="page-link" href="#">{{(i+2)%5}}</a></li>
+            <li class="page-item" *ngIf="(i+1)%5==0">
+              <a class="page-link" (click)="paginationDisplayNext((i+1)/5)">{{(i+1)/5}}</a></li>
           </ng-container>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          <li class="page-item"><a class="page-link" (click)="nextClickPagination()">Next</a></li>
         </ul>
           
       </nav>
@@ -30,7 +30,7 @@
 </div>
 <div class="container-fluid" id="patients_container">
   <div class="row inline-block-row mx-auto">
-  <div *ngFor="let user of users; let i = index" class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xl-5 d-flex  text-center mb-5 mr-5" id="patient_profile_box"> 
+  <div *ngFor="let user of users | slice:fromIndex:toIndex; let i = index" class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xl-5 d-flex  text-center mb-5 mr-5" id="patient_profile_box"> 
     <i *ngIf="user.gender=='male'" class="glyphicon glyphicon-user my-auto align-middle text-left" id="user_profile_glyph"></i>
     <i *ngIf="user.gender=='female'" class="glyphicon glyphicon-queen my-auto align-middle text-left" id="user_profile_glyph"></i>
     <ul class="text-right text-xs-left d-block">
@@ -38,20 +38,20 @@
       <li class="text-right mr-0 my-0 col-xs-3"><button class="" mat-button [matMenuTriggerFor]="menu" id="menu-button"><span class="flaticon-settings"></span></button></li>
       <li id="mat-menu">
           <mat-menu #menu="matMenu">
-            <button mat-menu-item type="button" (click)="deleteUser(user._id)" routerLink="../patients">DELETE</button>
             <button mat-menu-item type="button"  (click)="getUser(user)">UPDATE</button>
+            <button mat-menu-item type="button" (click)="deleteUser(user._id)" routerLink="../patients">DELETE</button>
           </mat-menu>
         </li>
-      <!-- <li class="text-left col-xs-12" *ngIf="user.email.length>18"><span class="flaticon-envelope pr-3"></span>{{user.email| slice:0:18}}..</li> -->
-      <!-- <li class="text-left col-xs-12" *ngIf="user.email.length<=18"><span class="flaticon-envelope pr-3"></span>{{user.email}} -->
       <li class="text-left col-xs-12 pl-0"><span class="flaticon-envelope pr-3"></span>{{user.email}}</li>
       <li class="text-left col-xs-12 pl-0"><span class="flaticon-heart pr-3"></span>{{user.birth}}</li>
       <li class="text-left col-xs-12 pl-0"><span class="flaticon-phone-call pr-3"></span>P: {{user.phone}} </li>
     </ul>
     <ul class="text-left">
-    
     </ul>
   </div>
 </div>
 </div>
 </div> 
+<div *ngIf="page==='updatePatients'">
+    <app-update-patients [patient]="patient" [users]="users" (navigationBackToPatient)="changePage($event)"></app-update-patients>
+    </div>

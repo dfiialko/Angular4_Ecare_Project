@@ -1,21 +1,10 @@
-
-<div class="container">
-
 <div *ngIf="page==='logInPage'">
-        <app-log-in (resetPasswordEmitter)="changePage($event)"
-                    (homePageEmitter)="changePage($event)"
-                    (userNameEmitter)="sendUserName($event)">
-                     </app-log-in>
+        <app-log-in (resetPasswordEmitter)="changePage($event)" (homePageEmitter)="changePage($event)" (userNameEmitter)="sendUserName($event)">
+        </app-log-in>
 </div>
-
 <div *ngIf="page==='passwordPage'">
-        <app-password-reset [email] = username 
-                            (logInEmitterPassword)="changePage($event)"> </app-password-reset>
+        <app-password-reset [email]=u sername (logInEmitterPassword)="changePage($event)"> </app-password-reset>
 </div>
-
 <div id="homeDiv" *ngIf="page==='homePage'">
         <app-home [homeUserName]="username" id="homeApp" (logInEmitterHome)="changePage($event)"></app-home>
-</div>
-
-
 </div>

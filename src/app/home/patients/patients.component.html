@@ -1,41 +1,55 @@
 <div *ngIf="page==='patients'">
-<div id="patientContainer">
-        <div id="patientsHeader">   
-         <h3>Total Patients Enrolled: {{users.length}}</h3>   
-         <div id="addPatient">
-            <a routerLink="../addPatient" class="btn btn-primary" id="add-patient-button">Add Patient</a>
-          </div><br>       
-        </div>    
-        <hr id="patient-header-hr">
-       <div id="patientSearch">
-          <input type="text" placeholder="Search" size=55>
-          <button class="btn btn-primary">Go</button>
-        </div>
-        <div id="patient-profile-container">
-          <div *ngFor="let user of users; let i = index">
-            <div class="patientProfile">
-              <span class="glyphicon glyphicon-user" id="user_profile_glyph"></span>
-              <button mat-button [matMenuTriggerFor]="menu" id="menu-button"><span class="flaticon-settings"></span></button>
-              <ul>
-                <li id="mat-menu">
-                  <mat-menu #menu="matMenu">
-                    <button mat-menu-item type="button" (click)="deleteUser(user._id)" routerLink="../patients">DELETE</button>
-                    <button mat-menu-item type="button"  (click)="getUser(user)">UPDATE</button>
-                  </mat-menu>
-                </li>
-                <li>
-                  <h4>{{user.name}}</h4>
-                </li>
-                <li><span class="flaticon-envelope"></span>{{user.email}}</li>
-                <li><span class="flaticon-heart"></span>{{user.birth}}</li>
-                <li><span class="flaticon-phone-call"></span>P: {{user.phone}} </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid">
+  <div class="row d-inline mb-0 pb-0">
+    <div class="col-12 align-text-bottom ">
+      <h3 id="patients_count_header">Total Patients Enrolled: {{users.length}}</h3>
     </div>
-
-    <div *ngIf="page==='updatePatients'">
-    <app-update-patients [patient]="patient" [users]="users" (navigationBackToPatient)="changePage($event)"></app-update-patients>
+    <div class="col-12 align-top text-xl-right text-sm-right text-md-right mb-0 pb-0">
+      <a routerLink="../addPatient" class="btn btn-primary btn-lg p-3 px-5 e_care_button" id="add_patient_button">Add Patient</a>
     </div>
+  </div>
+  <hr class="border-1 mt-0">
+  <div class="row mx-auto">
+    <div class="form-group form-inline">
+      <input type="text" class="form-control col-xs-10 col-md-5" placeholder="Search" size=55/>
+      <button class="btn btn-primar col-sm-2 col-md-1 col-lg-1 col-xs-3 e_care_button">GO</button>
+      <nav aria-label="Page navigation example" class="col-md-5 col-sm-12 align-bottom text-center">
+        <ul class="pagination" id="patient_paginator">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <ng-container *ngFor="let user of users;let i=index;">
+            <li class="page-item" *ngIf="i>=4">
+              <a class="page-link" href="#">{{(i+2)%5}}</a></li>
+          </ng-container>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="container-fluid" id="patients_container">
+  <div class="row inline-block-row mx-auto">
+  <div *ngFor="let user of users; let i = index" class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xl-5 d-flex  text-center mb-5 mr-5" id="patient_profile_box"> 
+    <i *ngIf="user.gender=='male'" class="glyphicon glyphicon-user my-auto align-middle text-left" id="user_profile_glyph"></i>
+    <i *ngIf="user.gender=='female'" class="glyphicon glyphicon-queen my-auto align-middle text-left" id="user_profile_glyph"></i>
+    <ul class="text-right text-xs-left d-block">
+      <li class="text-center col-xs-4"><h4>{{user.name}}</h4></li>
+      <li class="text-right mr-0 my-0 col-xs-3"><button class="" mat-button [matMenuTriggerFor]="menu" id="menu-button"><span class="flaticon-settings"></span></button></li>
+      <li id="mat-menu">
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item type="button" (click)="deleteUser(user._id)" routerLink="../patients">DELETE</button>
+            <button mat-menu-item type="button"  (click)="getUser(user)">UPDATE</button>
+          </mat-menu>
+        </li>
+      <!-- <li class="text-left col-xs-12" *ngIf="user.email.length>18"><span class="flaticon-envelope pr-3"></span>{{user.email| slice:0:18}}..</li> -->
+      <!-- <li class="text-left col-xs-12" *ngIf="user.email.length<=18"><span class="flaticon-envelope pr-3"></span>{{user.email}} -->
+      <li class="text-left col-xs-12 pl-0"><span class="flaticon-envelope pr-3"></span>{{user.email}}</li>
+      <li class="text-left col-xs-12 pl-0"><span class="flaticon-heart pr-3"></span>{{user.birth}}</li>
+      <li class="text-left col-xs-12 pl-0"><span class="flaticon-phone-call pr-3"></span>P: {{user.phone}} </li>
+    </ul>
+    <ul class="text-left">
+    
+    </ul>
+  </div>
+</div>
+</div>
+</div> 

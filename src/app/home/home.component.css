@@ -1,3 +1,8 @@
+ 
+ #homeContainer{
+     max-width: 1600px;
+     margin:auto;
+ }
  .flex-column li a
 {
     font-weight: bold;
@@ -7,9 +12,8 @@
  #sidebar
 {   
    min-height: 100%;
-   max-height: 180%;
+   max-width: 400px;
    overflow: hidden;
-
 } 
 
 .glyphicon

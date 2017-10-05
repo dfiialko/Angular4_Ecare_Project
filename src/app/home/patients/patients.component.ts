@@ -23,7 +23,18 @@ export class PatientsComponent implements OnInit {
   { email: 'verylongemailgoAwayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
   { email: 'goAwayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'female' },
   { email: 'peter@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
-  { email: 'peter@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' }];
+  { email: 'peter@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '2@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '2@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '2@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'female' },
+  { email: '2@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '2@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '3@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '3emailgoAwayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '3ayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'female' },
+  { email: '3r@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '3er@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: '3er@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' }];
 
   constructor(private _dataService: DataService, private location: PlatformLocation, router: Router) {
     // Access the Data Service's getUsers() method we defined
@@ -50,4 +61,27 @@ export class PatientsComponent implements OnInit {
   changePage(pageName) {
     this.page = pageName.pagename;
   }
+  // ************* Pagination ***************//
+  previousClickPagination() {
+    if (this.fromIndex >= 5) {
+      this.fromIndex -= 5;
+      this.toIndex -= 5;
+    }
+  }
+  nextClickPagination() {
+    if (this.users.length >= this.toIndex) {
+      this.fromIndex += 5;
+      this.toIndex += 5;
+    }
+  }
+  paginationDisplayNext(number) {
+    if (number > 1) {
+    this.fromIndex =  (number - 1) * 5;
+    this.toIndex = number * 5;
+    }else {
+      this.fromIndex = 0;
+      this.toIndex = 5;
+    }
+  }
+// ***********--------****************//
 }

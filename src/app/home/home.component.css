@@ -1,13 +1,16 @@
-.flex-column li a
+ .flex-column li a
 {
     font-weight: bold;
     color:grey;
 }
 
-#sidebar
+ #sidebar
 {   
-    width:21%;
-}
+   min-height: 100%;
+   max-height: 180%;
+   overflow: hidden;
+
+} 
 
 .glyphicon
 {
@@ -29,7 +32,9 @@
     background-color: rgba(89,104,111,1);
 }
 
-
+#footer{
+    clear: both;
+}
 
 #topbar li
 {   
@@ -57,16 +62,16 @@
     padding-bottom: 25px;
     padding-right: 25px;
     color:white;
-}
+} 
 
-#contentContainer
+/* #contentContainer
 {
     width:70%;
     min-height: 100%;
     float: left;
     margin-left:20px;
     min-height: auto;
-}
+} */
 
 
 /* ///////////////////////////////////// */

@@ -41,6 +41,7 @@ export class PatientsComponent implements OnInit {
     console.log(passedUserValue);
     this.page = 'updatePatients';
     this.patient = passedUserValue;
+
   }
   deleteUser(userID) {
     this._dataService.deleteUser(userID).subscribe();

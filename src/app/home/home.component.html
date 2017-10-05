@@ -1,7 +1,7 @@
 <div id="homeContainer" class="w-100">
   <!-- Sidebar for laptop users -->
   <ul id="sidebar" class="sticky-top w-25 h-100 d-none d-md-flex nav flex-column nav-pills float-left bg-dark">
-    <img id="e-care" src="./assets/e-care-home.PNG" alt="e-care">
+    <img class="img-fluid" id="e-care" src="./assets/e-care-home.PNG" alt="e-care">
     <div class="container">
       <li class="nav-item">
         <a class="nav-link" (click)="changeComponent('DASHBOARD')" routerLink="dashboard">
@@ -83,7 +83,7 @@
     </div>
   </nav>
   <!--mobile menu *************************************************-->
-  <ul class="h-100 w-25 sticky-top d-md-none nav flex-column nav-pills float-left bg-dark mt" id="sidebar">
+  <ul class="sticky-top h-100 w-25 d-md-none nav flex-column float-left bg-dark mt" id="sidebar">
     <li class="nav-item m-3">
       <a class="nav-link" (click)="changeComponent('DASHBOARD')" routerLink="dashboard">
 <span class="flaticon-house"></span></a>

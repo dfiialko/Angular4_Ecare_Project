@@ -1,6 +1,8 @@
-#tableMessage
+#border
 {
-    margin-left:6%;
-    margin-top:6%;
+    border-radius: 10px;
+    border: solid 1px lightgrey;
+    margin:5%;
     width:85%;
+    padding:2%;
 }

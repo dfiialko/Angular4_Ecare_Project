@@ -1,15 +1,14 @@
-#update-patient-container{
+#update_patient_main_area{
+    background-color: rgba(247,247,247,0.9);
+}
+/* #update-patient-container{
     overflow: hidden;
     width: 100%;   
 }
 #update-patient-container hr{
     clear: both;
 }
-#update-patient-main-area{
-    height: 400px;
-    background-color: rgba(247,247,247,0.9);
-    padding: 15px;
-}
+
 #update-patient-profile{    
     width:21.5%;
     height: 100%;
@@ -23,7 +22,6 @@
     width:72%;
     height: 100%;
     float: right;
-    /* height: 300px; */
     background-color: white;
 }
 #add-treatment-task-btn{
@@ -92,4 +90,11 @@ h3, h5 a
 }
 #add-patient-button{
     padding:10px;
+} */
+#update_patients_path{
+color:black;
 }
+#update_patients_path a{
+    text-decoration: none;
+    color:black;
+    }

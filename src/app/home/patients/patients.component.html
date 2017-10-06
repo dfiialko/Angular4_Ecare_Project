@@ -2,13 +2,13 @@
 <div class="container-fluid">
   <div class="row d-inline mb-0 pb-0">
     <div class="col-12 align-text-bottom ">
-      <h3 id="patients_count_header">Total Patients Enrolled: {{users.length}}</h3>
+      <h3 class="e_care_h3">Total Patients Enrolled: {{users.length}}</h3>
     </div>
     <div class="col-12 align-top text-xl-right text-sm-right text-md-right mb-0 pb-0">
-      <a routerLink="../addPatient" class="btn btn-primary btn-lg p-3 px-5 e_care_button" id="add_patient_button">Add Patient</a>
+      <a routerLink="../addPatient" class="btn btn-primary btn-lg p-3 px-5 e_care_button mb-0" id="add_patient_button">Add Patient</a>
     </div>
   </div>
-  <hr class="border-1 mt-0">
+  <hr class="border-1 mt-0 pt-0">
   <div class="row mx-auto">
     <div class="form-group form-inline">
       <input type="text" class="form-control col-xs-10 col-md-5" placeholder="Search" size=55/>
@@ -16,12 +16,12 @@
       <nav aria-label="Page navigation example" class="col-md-5 col-sm-12 align-bottom text-center">
 
         <ul class="pagination" id="patient_paginator">
-          <li class="page-item"><a class="page-link" (click)="previousClickPagination()">Previous</a></li>
+          <li class="page-item"><a class="page-link" (click)="previousClickPagination()"><</a></li>
           <ng-container *ngFor="let user of users;let i=index;">
             <li class="page-item" *ngIf="(i+1)%5==0">
               <a class="page-link" (click)="paginationDisplayNext((i+1)/5)">{{(i+1)/5}}</a></li>
           </ng-container>
-          <li class="page-item"><a class="page-link" (click)="nextClickPagination()">Next</a></li>
+          <li class="page-item"><a class="page-link" (click)="nextClickPagination()">></a></li>
         </ul>
           
       </nav>

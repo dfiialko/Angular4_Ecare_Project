@@ -26,6 +26,16 @@
     color:#979494;
     font-weight: 600;
  }
+ #bottom
+ {
+     margin-left:1%;
+     margin-top:2%;
+ }
+ 
+ #bottom a
+ {
+     color:black;
+ }
 /* #plansHeader
 {
    width:100%;

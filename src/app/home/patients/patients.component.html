@@ -1,5 +1,6 @@
 
 <div *ngIf="page==='patients'">
+<<<<<<< HEAD
     <div class="container-fluid">
       <div class="row d-inline mb-0 pb-0">
         <div class="col-12 align-text-bottom ">
@@ -10,28 +11,41 @@
         </div>
       </div>
       <hr class="border-1 mt-0 pt-0">
+=======
+<div class="container-fluid">
+  <div class="row d-inline mb-0 pb-0">
+    <div class="col-12 align-text-bottom ">
+      <h3 class="e_care_h3">Total Patients Enrolled: {{users.length}}</h3>
+    </div>
+    <div class="col-12 align-top text-xl-right text-sm-right text-md-right mb-0 pb-0">
+      <a routerLink="../addPatient" class="btn btn-primary btn-lg p-3 px-5 e_care_button mb-0" id="add_patient_button">Add Patient</a>
+    </div>
+  </div>
+  <hr class="border-1 mt-0 pt-0"> 
+>>>>>>> TreatmentPlans
   
-      <div class="row mx-auto">
-        <div class="form-group form-inline">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" size="55" />
-            <span class="input-group-btn"> <button class="btn btn-primary e_care_button">GO</button></span>
-          </div>
+     <div class="row mx-auto"> 
+       <div class="form-group form-inline"> 
+         <div class="input-group"> 
+           <input type="text" class="form-control" placeholder="Search" size="55" /> 
+           <span class="input-group-btn"> <button class="btn btn-primary e_care_button">GO</button></span> 
+         </div> 
   
-          <nav class="ml-md-5 mt-md-5 text-center">
-            <ul class="pagination" id="patient_paginator">
-              <li class="page-item">
-                <a class="page-link" (click)="previousClickPagination()">
-                  <</a>
-              </li>
-              <ng-container *ngFor="let user of users;let i=index;">
-                <li class="page-item" *ngIf="(i+1)%5==0">
-                  <a class="page-link" (click)="paginationDisplayNext((i+1)/5)">{{(i+1)/5}}</a></li>
-              </ng-container>
-              <li class="page-item"><a class="page-link" (click)="nextClickPagination()">></a></li>
-            </ul>
-          </nav>
+         <nav class="ml-md-5 mt-md-5 text-center"> 
+           <ul class="pagination" id="patient_paginator"> 
+             <li class="page-item"> 
+               <a class="page-link" (click)="previousClickPagination()"> 
+                 <</a> 
+             </li> 
+             <ng-container *ngFor="let user of users;let i=index;"> 
+               <li class="page-item" *ngIf="(i+1)%5==0"> 
+                 <a class="page-link" (click)="paginationDisplayNext((i+1)/5)">{{(i+1)/5}}</a></li> 
+             </ng-container> 
+             <li class="page-item"><a class="page-link" (click)="nextClickPagination()">></a></li> 
+           </ul> 
+         </nav> 
   
+<<<<<<< HEAD
         </div>
       </div>
     </div>
@@ -61,7 +75,35 @@
         </div>
       </div>
     </div>
+=======
+       </div> 
   </div>
-  <div *ngIf="page==='updatePatients'">
+</div>
+<div class="container-fluid" id="patients_container">
+  <div class="row inline-block-row mx-auto">
+  <div *ngFor="let user of users | slice:fromIndex:toIndex; let i = index" class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xl-5 d-flex  text-center mb-5 mr-5" id="patient_profile_box"> 
+    <i *ngIf="user.gender=='male'" class="glyphicon glyphicon-user my-auto align-middle text-left" id="user_profile_glyph"></i>
+    <i *ngIf="user.gender=='female'" class="glyphicon glyphicon-queen my-auto align-middle text-left" id="user_profile_glyph"></i>
+    <ul class="text-right text-xs-left d-block">
+      <li class="text-center col-xs-4"><h4>{{user.name}}</h4></li>
+      <li class="text-right mr-0 my-0 col-xs-3"><button class="" mat-button [matMenuTriggerFor]="menu" id="menu-button"><span class="flaticon-settings"></span></button></li>
+      <li id="mat-menu">
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item type="button"  (click)="getUser(user)">UPDATE</button>
+            <button mat-menu-item type="button" (click)="deleteUser(user._id)" routerLink="../patients">DELETE</button>
+          </mat-menu>
+        </li>
+      <li class="text-left col-xs-12 pl-0"><span class="flaticon-envelope pr-3"></span>{{user.email}}</li>
+      <li class="text-left col-xs-12 pl-0"><span class="flaticon-heart pr-3"></span>{{user.birth}}</li>
+      <li class="text-left col-xs-12 pl-0"><span class="flaticon-phone-call pr-3"></span>P: {{user.phone}} </li>
+    </ul>
+    <ul class="text-left">
+    </ul>
+>>>>>>> TreatmentPlans
+  </div>
+</div>
+</div>
+</div> 
+<div *ngIf="page==='updatePatients'">
     <app-update-patients [patient]="patient" [users]="users" (navigationBackToPatient)="changePage($event)"></app-update-patients>
-  </div>
+    </div>

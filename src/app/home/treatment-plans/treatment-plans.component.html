@@ -1,45 +1,49 @@
-<div id="plansContainer">
-    <div id="plansHeader">
-   
-      <h3>Total Treatment Plans Created: {{plans.length}}</h3>
-   
-      <div id="createTreatmentPlan">
-        <a routerLink="../addPatient" class="btn btn-primary"> + CREATE TREATMENT PLAN</a>
-      </div><br>
+<div class="container-fluid">
+    <div class="row my-5 mx-auto pb-0">
+      <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+        <h3 class="e_care_h3">Total Treatment Plans created: {{plans.length}}</h3>
+      </div>
+      <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-xl-left text-sm-left text-md-left mb-0 pb-0">
+        <a routerLink="../createPlan" class="btn btn-primary btn-lg p-3 py-4 px-5 e_care_button mb-0 e_care_h3" id="create_plan_button">+ CREATE TREATMENT PLAN</a>
+      </div>
     </div>
-   <div id="plans-container-menu-table">
-    <div id="plansTableMenu">
-            <button mat-button (click)="displayAll()" class="treatment-plan-button" #focusButton>VIEW ALL</button>
-            <button mat-button [matMenuTriggerFor]="menu" class="treatment-plan-button">{{menuButton}}<span class="caret"></span></button>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+          <button mat-button (click)="displayAll()" class="treatment_plan_button" #focusButton>VIEW ALL</button>
+          <button mat-button [matMenuTriggerFor]="menu" class="treatment_plan_button">{{menuButton}}<span class="caret"></span></button>
             <mat-menu #menu="matMenu">    
               <button mat-menu-item id="button-mat"*ngFor="let category of categories;let i = index" (click)="changeCategory(category)">{{category}}</button>
-            </mat-menu>
+            </mat-menu>      
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-12" id="border">
+        <table class="table table-responsive table-hover" >
+<thead>
+          <tr>
+              <th class="checkBox"><mat-checkbox class="example-margin" (click)="checkAll()"></mat-checkbox></th>
+              <th class="messages">Treatment Plan </th>
+              <th class="messages">Date Created</th>
+              <th class="messages">Created By</th>
+              <th class="messages">Total Patient Enrolled</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let plan of plans" id="table_body">
+                <td class="checkBox"><mat-checkbox class="example-margin" checked={{check}}></mat-checkbox>
+                <td class="messages"><u>{{plan.treatmentPlan}}</u></td>
+                <td class="messages">{{plan.dateCreated}}</td>
+                <td class="messages">{{plan.createdBy}}</td>
+                <td class="messages">{{plan.totalPatientsEnrolled}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-   
-    <div id="plansTableContainer">
-      <table id="plansTable">
-        <tr>
-          <th class="checkBox"><mat-checkbox class="example-margin" (click)="checkAll()"></mat-checkbox></th>
-          <th class="messages">Treatment Plan </th>
-          <th class="messages">Date Created</th>
-          <th class="messages">Created By</th>
-          <th class="messages">Total Patient Enrolled</th>
-        </tr>
-
-        <tr *ngFor="let plan of plans">
-          <!-- <td><input type="checkbox" name="from" value="plan.from"> {{plan.treatmentPlan}}</td> -->
-          <td class="checkBox"><mat-checkbox class="example-margin" checked={{check}}></mat-checkbox></td>
-          <td class="messages">{{plan.treatmentPlan}}</td>
-          <td class="messages">{{plan.dateCreated}}</td>
-          <td class="messages">{{plan.createdBy}}</td>
-          <td class="messages">{{plan.totalPatientsEnrolled}}</td>
-        </tr>
-      </table>
     </div>
-  
-    <div id="bottomMenu">
-      <span class="flaticon-download-1"></span><a  class="achieve" href="">Archieve</a>
-      <span class="flaticon-garbage"></span><a class="delete" href="">Delete</a>
-    </div>
-   </div>
+    
   </div>
+  <div id="bottom" class="ml-0">
+      <a href=""><span class="flaticon-download-1"></span> Archieve</a>
+      <a href=""><span class="flaticon-garbage"></span> Delete</a>
+    </div>

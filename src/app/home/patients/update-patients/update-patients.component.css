@@ -1,5 +1,12 @@
 #update_patient_main_area{
-    background-color: rgba(247,247,247,0.9);
+    background-color: #efefef;
+}
+#update_patient_profile{
+    background-color: white;
+}
+#update_patient_profile_ul{
+    list-style-type: none;
+    padding-left: 0;
 }
 /* #update-patient-container{
     overflow: hidden;

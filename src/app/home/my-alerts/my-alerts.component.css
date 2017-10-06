@@ -4,5 +4,12 @@
     border: solid 1px lightgrey;
     margin:5%;
     width:85%;
-    padding:2%;
+    padding-top:2%;
+    padding-left:2%;
+    padding-right:2%;
+}
+
+.btn
+{
+    background-color: #000041;
 }

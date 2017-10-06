@@ -1,50 +1,46 @@
-<!-- <div id="messageContainer">
-  <div id="searchMessage">
-  <ul>
-    <li><a href="">Inbox({{messages.length}})</a></li>
-    <li class="line">|</li>
-    <li><a href="">Archive</a></li>
-    <li class="line">|</li>
-    <li><a href="">Trash</a></li>
-  </ul>
-  <form id="searchBar" action="">
-    <input type="text" name="search" placeholder=" Search Message" size="50" required>
-    <button type="submit" class="btn btn-primary">SEARCH</button>
-  </form>
-</div>
-<div id="messageTableContainer">
-  <table id="messageTable">
-    <tr>
-      <th class="checkBox"><mat-checkbox class="example-margin" (click)="checkAll()"></mat-checkbox></th>
-      <th class="messages">From</th>
-      <th class="messages">Date Received</th>
-      <th class="messages">Subject</th>
-      <th class="messages">Status</th>
-      <th class="messages">Reply</th>
-    </tr>
-    <tr *ngFor="let message of messages">
-      <td class="checkBox"><mat-checkbox class="example-margin" checked={{check}}></mat-checkbox></td>
-      <td class="messages">{{message.from}}</td>
-      <td class="messages">{{message.dateReceived}}</td>
-      <td class="messages">{{message.subject}}</td>
-      <td class="messages">{{message.status}}</td>
-      <td class="messages"><span class="flaticon-envelope"></span><a href="#">{{message.reply}}</a></td>
-    </tr>
-  </table>
-</div>
-<div id="bottomMenu">
-    <span class="flaticon-download-1"></span><a class="archieve" href="">Archieve</a>
-    <span class="flaticon-garbage"></span><a class="delete" href="">Delete</a>
-</div>
-</div> -->
 
-<ol class="breadcrumb" id="header">
-  <li class="breadcrumb-item"><a href="" class="m-2">Inbox({{messages.length}})</a></li>
-  <li class="breadcrumb-item"><a href="" class="m-2">Archive</a></li>
-  <li class="breadcrumb-item"><a href="" class="m-2">Trash</a></li>
+<ol class="breadcrumb mb-0 pb-0" id="header">
+  <li class="breadcrumb-item"><a href="" class="mx-3">Inbox({{messages.length}})</a></li>
+  <li class="breadcrumb-item"><a href="" class="mx-3">Archive</a></li>
+  <li class="breadcrumb-item"><a href="" class="mx-3">Trash</a></li>
 
-  <form class="form-inline float-right">
-    <input type="text" class="form-control mr-1" size="50" placeholder="Search Message">
+  <form class="form-inline float-right mr-5">
+    <input type="text" class="form-control mr-1" size="40" placeholder="Search Message">
     <button type="submit" class="btn btn-primary">SEARCH</button>
   </form>
 </ol>
+
+<div id="border">
+  <table class="table table-responsive table-hover">
+    <thead>
+      <tr>
+        <th class="checkBox">
+          <mat-checkbox class="example-margin" (click)="checkAll()"></mat-checkbox>
+        </th>
+        <th>From</th>
+        <th>Date Received</th>
+        <th>Subject</th>
+        <th>Status</th>
+        <th>Reply</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let message of messages">
+        <td class="checkBox">
+          <mat-checkbox class="example-margin" checked={{check}}></mat-checkbox>
+        </td>
+        <td>{{message.from}}</td>
+        <td>{{message.dateReceived}}</td>
+        <td>{{message.subject}}</td>
+        <td>{{message.status}}</td>
+        <td class="d-none d-lg-block"><a href="#"><span class="flaticon-envelope mr-1"></span>{{message.reply}}</a></td>
+        <td class="d-lg-none"><a href="#"><span class="flaticon-envelope mr-1"></span></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="bottom">
+  <a href=""><span class="flaticon-download-1"></span> Archieve</a>
+  <a href=""><span class="flaticon-garbage"></span> Delete</a>
+</div>

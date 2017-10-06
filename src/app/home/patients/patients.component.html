@@ -14,6 +14,7 @@
       <input type="text" class="form-control col-xs-10 col-md-5" placeholder="Search" size=55/>
       <button class="btn btn-primar col-sm-2 col-md-1 col-lg-1 col-xs-3 e_care_button">GO</button>
       <nav aria-label="Page navigation example" class="col-md-5 col-sm-12 align-bottom text-center">
+
         <ul class="pagination" id="patient_paginator">
           <li class="page-item"><a class="page-link" (click)="previousClickPagination()"><</a></li>
           <ng-container *ngFor="let user of users;let i=index;">
@@ -22,6 +23,7 @@
           </ng-container>
           <li class="page-item"><a class="page-link" (click)="nextClickPagination()">></a></li>
         </ul>
+          
       </nav>
     </div>
   </div>

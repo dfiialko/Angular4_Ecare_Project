@@ -1,27 +1,23 @@
-<div id="table">
-  <table>
-
-    <div id="tableContent">
-      <tr>
-        <th>Patient Name</th>
-        <th>Date Received</th>
-        <th>Alert</th>
-        <th>Status</th>
-        <th>Send Message</th>
-      </tr>
-
-
-      <tr *ngFor="let patient of patientAlert">
-        <td><a [ngStyle]="{'color': patient.status === 'High Risk' ? 'red' : '#585656'}" href="#">{{patient.name}}</a></td>
-        <td>{{patient.dateReceived}}</td>
-        <td><a [ngStyle]="{'color': patient.status === 'High Risk' ? 'red' : '#585656'}" href="#">{{patient.alert}}</a></td>
-        <td *ngIf="patient.status === 'New'"><img src="../../../assets/patientNewStatus.PNG" alt={{patient.status}}> </td>
-        <td *ngIf="patient.status === 'High Risk'"><img src="../../../assets/patientHighRiskStatus.PNG" alt={{patient.status}}> </td>
-        <td *ngIf="patient.status === 'Completed'"><img src="../../../assets/patientCompleteStatus.PNG" alt={{patient.status}}> </td>
-        <td><span class="flaticon-envelope"></span><a href="#">{{patient.sendMessage}}</a></td>
-      </tr>
-    </div>
-
-  </table>
-
-</div>
+<table id="tableMessage" class="table table-hover">
+  <thead>
+    <tr>
+      <th>Patient Name</th>
+      <th>Date Received</th>
+      <th>Alert</th>
+      <th>Status</th>
+      <th>Send Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of patientAlert">
+      <td><a [ngStyle]="{'color': patient.status === 'High Risk' ? 'red' : '#585656'}" href="#">{{patient.name}}</a></td>
+      <td>{{patient.dateReceived}}</td>
+      <td><a [ngStyle]="{'color': patient.status === 'High Risk' ? 'red' : '#585656'}" href="#">{{patient.alert}}</a></td>
+      <td *ngIf="patient.status === 'New'"><img class="img-fluid" src="../../../assets/patientNewStatus.PNG" alt={{patient.status}}></td>
+      <td *ngIf="patient.status === 'High Risk'"><img class="img-fluid" src="../../../assets/patientHighRiskStatus.PNG" alt={{patient.status}}> </td>
+      <td *ngIf="patient.status === 'Completed'"><img class="img-fluid" src="../../../assets/patientCompleteStatus.PNG" alt={{patient.status}}> </td>
+      <td class="d-lg-none"><a href="#"><span class="flaticon-envelope"></span></a></td>
+      <td class="d-none d-lg-block"><a href="#"><span class="flaticon-envelope"></span> {{patient.sendMessage}}</a></td>
+    </tr>
+  </tbody>
+</table>

@@ -7,14 +7,7 @@
     width:100%;
     display:block;
 }
-#patients_count_header{
-    font-weight: bold;
-}
-.e_care_button{
-    border-color: rgba(216,0,86,1);
-    background-color: rgba(216,0,86,1);
-    color:white;
-}
+
 #patients_container ul{
     list-style-type: none;
     color:black;

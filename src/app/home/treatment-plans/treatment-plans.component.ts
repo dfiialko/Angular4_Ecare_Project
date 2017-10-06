@@ -33,6 +33,7 @@ export class TreatmentPlansComponent implements OnInit {
     // Display all records
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngAfterViewInit() {
     // Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     // Add 'implements AfterViewInit' to the class.

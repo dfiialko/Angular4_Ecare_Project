@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row my-5 mx-auto pb-0">
       <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-        <h3 class="e_care_h3">Total Treatment Plans created :</h3>
+        <h3 class="e_care_h3">Total Treatment Plans created: {{plans.length}}</h3>
       </div>
       <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-xl-left text-sm-left text-md-left mb-0 pb-0">
         <a routerLink="../createPlan" class="btn btn-primary btn-lg p-3 py-4 px-5 e_care_button mb-0 e_care_h3" id="create_plan_button">+ CREATE TREATMENT PLAN</a>
@@ -41,8 +41,13 @@
         </table>
       </div>
     </div>
+    
   </div>
-
+  <div id="bottom" class="ml-0">
+      <a href=""><span class="flaticon-download-1"></span> Archieve</a>
+      <a href=""><span class="flaticon-garbage"></span> Delete</a>
+    </div>
+  
 <!-- <div id="plansContainer">
     <div id="plansHeader">
    

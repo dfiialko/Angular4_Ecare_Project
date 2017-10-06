@@ -1,43 +1,132 @@
-<div id="homeContainer">
-
-  <div id="sidebar">
-
-    <img id="e-care" src="./assets/e-care-home.PNG" alt="e-care">
-
-    <ul>
-      <li class="menu_li" #li><span class="flaticon-house"></span><a (click)="changeComponent('DASHBOARD')" routerLink="dashboard">DASHBOARD</a></li>
-      <!-- <li><span class="glyphicon glyphicon-user"></span><a href="#" (click)="changeComponent('PATIENTS')">PATIENTS</a></li>-->
-      <li class="menu_li" #li><span class="flaticon-avatar"></span><a (click)="changeComponent('PATIENTS')" routerLink="patients">PATIENTS</a></li>
-      <li class="menu_li" #li><span class="flaticon-star"></span><a (click)="changeComponent('MY ALERTS')" routerLink="alerts">MY ALERTS</a></li>
-      <li class="menu_li" #li><span class="flaticon-envelope"></span><a (click)="changeComponent('MY MESSAGES')" routerLink="myMessages">MY MESSAGES</a></li>
-      <li class="menu_li" #li><span class="flaticon-speaker"></span><a (click)="changeComponent('TREATMENT ALERTS')" routerLink="treatmentAlerts">TREATMENT ALERTS</a></li>
-      <li class="menu_li" #li><span class="flaticon-book"></span><a (click)="changeComponent('TREATMENT TASKS')" routerLink="treatmentTasks">TREATMENT TASKS</a></li>
-      <li class="menu_li" #li><span class="flaticon-heart"></span><a (click)="changeComponent('TREATMENT PLANS')" routerLink="treatmentPlans">TREATMENT PLANS</a></li>
-      <li class="menu_li" #li><span class="flaticon-copy"></span><a (click)="changeComponent('LIBRARY')" routerLink="library">LIBRARY</a></li>
-      <li class="menu_li" #li><span class="flaticon-glasses"></span><a (click)="changeComponent('HEALTH RESOURCES')" routerLink="healthResources">HEALTH RESOURCES</a></li>
-      <li class="menu_li" #li><span class="flaticon-phone-call"></span><a (click)="changeComponent('CARE PROVIDER DIRECTORY')" routerLink="careProvider">CARE PROVIDER DIRECTORY</a></li>
-    </ul>
-    
-
+<div id="homeContainer" class="w-100">
+  <!-- Sidebar for laptop users -->
+  <ul id="sidebar" class="sticky-top w-25 h-100 d-none d-md-flex nav flex-column nav-pills float-left bg-dark">
+    <img class="img-fluid" id="e-care" src="./assets/e-care-home.PNG" alt="e-care">
+    <div class="container">
+      <li class="nav-item">
+        <a class="nav-link" (click)="changeComponent('DASHBOARD')" routerLink="dashboard">
+<span class="flaticon-house"></span> DASHBOARD</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="changeComponent('PATIENTS')" routerLink="patients">
+<span class="flaticon-avatar"></span>PATIENTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="changeComponent('MY ALERTS')" routerLink="alerts">
+<span class="flaticon-star"></span>MY ALERTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-none d-lg-block" (click)="changeComponent('MY MESSAGES')" routerLink="myMessages">
+<span class="flaticon-envelope"></span>MY MESSAGES</a>
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('MESSAGES')" routerLink="myMessages">
+<span class="flaticon-envelope"></span>MESSAGES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-none d-lg-block" (click)="changeComponent('TREATMENT ALERTS')" routerLink="treatmentAlerts">
+<span class="flaticon-speaker"></span>TREATMENT ALERTS</a>
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('ALERTS')" routerLink="treatmentAlerts">
+<span class="flaticon-speaker"></span>ALERTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-none d-lg-block" (click)="changeComponent('TREATMENT TASKS')" routerLink="treatmentTasks">
+<span class="flaticon-book"></span>TREATMENT TASKS</a>
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('TASKS')" routerLink="treatmentTasks">
+<span class="flaticon-book"></span>TASKS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-none d-lg-block" (click)="changeComponent('TREATMENT PLANS')" routerLink="treatmentPlans">
+<span class="flaticon-heart"></span>TREATMENT PLANS</a>
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('PLANS')" routerLink="treatmentPlans">
+<span class="flaticon-heart"></span>PLANS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="changeComponent('LIBRARY')" routerLink="library">
+<span class="flaticon-copy"></span>LIBRARY</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-none d-lg-block" (click)="changeComponent('HEALTH RESOURCES')" routerLink="healthResources">
+<span class="flaticon-glasses"></span>HEALTH RESOURCES</a>
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('RESOURCES')" routerLink="healthResources">
+<span class="flaticon-glasses"></span>RESOURCES</a>
+      </li>
+      <li class="nav-item mb-5">
+        <a class="nav-lin d-none d-xl-block" (click)="changeComponent('CARE PROVIDER DIRECTORY')" routerLink="careProvider">
+<span class="flaticon-phone-call"></span>CARE PROVIDER DIRECTORY</a>
+        <a class="nav-link d-block d-xl-none" (click)="changeComponent('DIRECTORY')" routerLink="careProvider">
+<span class="flaticon-phone-call"></span>DIRECTORY</a>
+      </li>
+    </div>
+  </ul>
+  <!-- The END of Sidebar for laptop users -->
+  <!-- Togglable Topbar -->
+  <nav id="topbar" class="navbar navbar-expand-md navbar-light m-auto">
+    <div class="container m-auto">
+      <span id="arrowLeft" class="glyphicon glyphicon-menu-left"></span>
+      <a class="navbar-brand m-auto" href="#">{{component}}</a>
+      <button class="navbar-toggler m-auto" data-toggle="collapse" data-target="#topNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="topNav">
+        <ul class="navbar-nav float-right m-auto">
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="#">Welcome back, {{homeUserName}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="signOut()">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--mobile menu *************************************************-->
+  <ul class="h-100 w-25 sticky-top d-md-none nav flex-column  float-left bg-dark mt" id="sidebar">
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('DASHBOARD')" routerLink="dashboard">
+<span class="flaticon-house"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('PATIENTS')" routerLink="patients">
+<span class="flaticon-avatar"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('MY ALERTS')" routerLink="alerts">
+<span class="flaticon-star"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('MY MESSAGES')" routerLink="myMessages">
+<span class="flaticon-envelope"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('ALERTS')" routerLink="treatmentAlerts">
+<span class="flaticon-speaker"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('TASKS')" routerLink="treatmentTasks">
+<span class="flaticon-book"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('PLANS')" routerLink="treatmentPlans">
+<span class="flaticon-heart"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('LIBRARY')" routerLink="library">
+<span class="flaticon-copy"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('RESOURCES')" routerLink="healthResources">
+<span class="flaticon-glasses"></span></a>
+    </li>
+    <li class="nav-item m-3">
+      <a class="nav-link" (click)="changeComponent('DIRECTORY')" routerLink="careProvider">
+<span class="flaticon-phone-call"></span></a>
+    </li>
+  </ul>
+  <div class="d-inline w-75 float-left" id="contentContainer">
+    <router-outlet ></router-outlet>
   </div>
-
-  <div id="topbar">
-    <span id="arrowLeft" class="glyphicon glyphicon-menu-left"></span>
-    <span id="topbar-title">{{component}}</span>
-    <ul>
-      <li>Welcome back, {{homeUserName}}</li>
-      <li>My Account</li>
-      <li>Help</li>
-      <li><a href="#" (click)="signOut()">Sign Out</a></li>
-    </ul>
-  </div>
-
-  <div id="contentContainer">
-  <router-outlet></router-outlet>
-  </div>
-  <!-- <app-dashboard *ngIf="component==='DASHBOARD'"></app-dashboard> -->
-  <!-- <app-patients [pageinput]="patients" hidden></app-patients>  -->
-  <!-- <app-my-alerts *ngIf="component==='MY ALERTS'"></app-my-alerts> -->
-  <!-- <app-my-messages *ngIf="component==='MY MESSAGES'"></app-my-messages> -->
-
+  <div id="footer"></div>
 </div>

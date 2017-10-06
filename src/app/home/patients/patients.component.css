@@ -1,9 +1,19 @@
+
+.hideOverflow
+{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    width:100%;
+    display:block;
+}
 #patients_count_header{
     font-weight: bold;
 }
 .e_care_button{
     border-color: rgba(216,0,86,1);
     background-color: rgba(216,0,86,1);
+    color:white;
 }
 #patients_container ul{
     list-style-type: none;
@@ -27,8 +37,23 @@ max-width: auto;
 #patient_paginator{
  color:gray;
 }
+@media(max-width:500px){
+    #patient_profile_box{
+        padding-left:0rem!important;
+        width:190%!important;
+    }
+}
 @media (max-width: 575px) { 
-
+#patients_container i{
+    display:none;
+}
+#patients_container li{
+    padding-left: 0px;
+}
+#patient_profile_box{
+    padding-left:0rem!important;
+    width:170%!important;
+}
   }
   
   /* // Small devices (landscape phones, less than 768px) */
@@ -43,8 +68,5 @@ max-width: auto;
   
   /* // Large devices (desktops, less than 1200px) */
   @media (max-width: 1199px) { 
-   
-  }
-  @media(min-width:1200px){
    
   }

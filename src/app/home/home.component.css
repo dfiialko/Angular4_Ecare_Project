@@ -1,42 +1,20 @@
-#homeContainer
+ 
+ #homeContainer{
+     max-width: 1600px;
+     margin:auto;
+ }
+ .flex-column li a
 {
-    height: 100%;
-    width: 1500px;
-    margin: auto;
-}
-
-#sidebar
-{
-    min-height: 100%;
-    height: 1000px;
-    width: 300px;
-    float: left;
-    margin:auto;
-    background-color: rgb(24, 40, 63);
-}
-#sidebar ul
-{
-    padding: 0px;
-}
-
-#sidebar img
-{
-    width: 300px;
-}
-
-#sidebar li
-{
-    color:#9D9D9D;
     font-weight: bold;
-    padding-top: 17px;
-    padding-bottom: 17px;
-    list-style-type: none;
-    padding-left: 40px;
+    color:grey;
 }
-#sidebar li :focus,#sidebar span :focus{
-    color:white;
-    background-color: black;
-}
+
+ #sidebar
+{   
+   min-height: 100%;
+   max-width: 400px;
+   overflow: hidden;
+} 
 
 .glyphicon
 {
@@ -49,38 +27,24 @@
 
 #sidebar li a
 {
-    padding-left: 20px;
     color:#9D9D9D;
-    text-decoration: none;
-}
-
-
-#sidebar li:active{
-    background-color: black;
-    color:white;
+    margin-top:25px;
 }
 
 #topbar
 {   
-    width: 100%;
-    height: 80px;
     background-color: rgba(89,104,111,1);
 }
 
-#topbar ul
-{
-    float: right;
-    padding-right:5%;
-    padding-top:30px;
+#footer{
+    clear: both;
 }
 
 #topbar li
 {   
     list-style-type: none;
-    display: inline;
     font-weight: bold;
-    padding:15px;
-    color: lightgrey;
+    margin-right:40px;
 }
 
 #topbar li a
@@ -89,30 +53,30 @@
     color: lightgrey;
 }
 
-#topbar-title
+.navbar-brand
 {
-    position: relative;
-    padding-left:45px;
-    font-size: 30px;
-    font-weight: bold;
+    font-weight: bold;  
     color:white;
+    font-size:25px;
 }
 
 #arrowLeft
 {
-    background-color: black;
-    padding: 30.5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
     color:white;
-}
+} 
 
-#contentContainer
+/* #contentContainer
 {
-    width:1180px;
+    width:70%;
     min-height: 100%;
     float: left;
     margin-left:20px;
     min-height: auto;
-}
+} */
+
 
 /* ///////////////////////////////////// */
 	/*

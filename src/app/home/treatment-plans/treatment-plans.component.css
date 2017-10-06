@@ -1,4 +1,32 @@
-#plansHeader
+#create_plan_button{
+    color:white;
+    text-decoration: none;
+}
+.treatment_plan_button{
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: rgba(97,108,112,1);
+    background-color: rgba(229,229,229,1);
+ }
+ #border
+ {
+    border-radius: 10px;
+    border: solid 1px lightgrey;
+
+    padding-top:2%;
+    padding-left:1%;
+    padding-right:2%;
+ }
+ .treatment_plan_button:focus{
+    color:white;
+    background-color: rgba(93, 102, 111, 1);
+ }
+ #table_body{
+    color:#979494;
+    font-weight: 600;
+ }
+/* #plansHeader
 {
    width:100%;
 }
@@ -96,13 +124,7 @@ th, td
    color:black;
 }
 
-.treatment-plan-button{
-    padding: 10px;
-    font-weight: 700;
-    font-size: 15px;
-    color: rgba(97,108,112,1);
-    background-color: rgba(229,229,229,1);
- }
+
  
  .caret
  {
@@ -113,10 +135,7 @@ th, td
      padding-right: 0px;
      width:45px;
  }
-.treatment-plan-button:focus{
-   color:white;
-   background-color: rgba(93, 102, 111, 1);
-}
+
 #plans-container-menu-table{
     position: relative;
     top:-120px;
@@ -125,4 +144,4 @@ th, td
 .archieve, .delete
 {
     padding-left: 5px;
-}
+} */

@@ -1,12 +1,9 @@
-#tableMessage
-{
-
-}
-
 #border
 {
     border-radius: 10px;
     border: solid 1px lightgrey;
     margin:5%;
     width:85%;
+    padding:2%;
+    overflow: hidden;
 }

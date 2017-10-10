@@ -17,7 +17,9 @@ export class HomeComponent implements OnInit {
     location.onPopState(() => { console.log('pressed'); });
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.selectedItem = this.component;
+  }
   changeComponent(componentInput) {
     this.selectedItem = componentInput;
     console.log(this.selectedItem);

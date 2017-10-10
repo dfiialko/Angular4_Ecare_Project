@@ -24,13 +24,9 @@ export class MyMessagesComponent implements OnInit {
 
   ngOnInit() {
   }
+  // Check all checkboxes in the form
   checkAll() {
-    if (this.check === null) {
-      this.check = 'checked';
-    }
-    else {
-      this.check = null;
-    }
+    this.check === null ? this.check = 'checked' : this.check = null;
   }
-
 }
+

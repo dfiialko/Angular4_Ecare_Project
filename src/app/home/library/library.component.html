@@ -1,35 +1,35 @@
-<div id="library-container">
-    
-     <div id="libraryHeader">
-    
-       <h3>Educational material that will help you understand your condition and treatment</h3>
-    
-       <div id="addContent">
-         <a routerLink="../addPatient" class="btn btn-primary"> + ADD CONTENT</a>
-       </div><br>
-     </div>
-    
-     <div id="library-main-area">
-       <div id="library-menu-area">
-         <button mat-button (click)="displayAll()" class="library-button" #focusButton>VIEW ALL</button>
-         <button mat-button [matMenuTriggerFor]="menu" class="library-button">{{menuButton}}</button>
-         <mat-menu #menu="matMenu">
-           <button mat-menu-item *ngFor="let category of categories;let i = index" (click)="changeCategory(category)">{{category}}</button>
-         </mat-menu>
-       </div>
-     </div>
-     <div id="library-cards-container">
-       <ul *ngFor="let card of cards; let i = index">
-         <li>
-           <img src="../../../assets/{{card}}.jpg" />
-         </li>
-         <li class="card_description"><b>Taking your blood pressure</b></li>
-         <li class="card_description" id="edit-card"><a>EDIT</a></li>
-       </ul>
-       <span class="clear"></span>
-     </div>
-     <div id="library-footer">
-       <span class="flaticon-download-1"></span><a href="">Archieve</a>
-       <span class="flaticon-garbage"></span><a href="">Delete</a>
-     </div>
+
+<div class="container-fluid pl-5">
+  <div class="row d-inline mb-0 pb-0">
+    <div class="col-12 align-text-bottom ">
+      <h5 class="e_care_h3">Educational material that will help you understand your condition and treatment</h5>
+    </div>
+    <div class="col-12 align-top text-xl-right text-sm-right text-md-right mb-0 pb-0">
+      <a routerLink="../addPatient" class="btn btn-primary btn-lg p-3 px-5 e_care_button mb-0" id="add_patient_button"><h4 class="e_care_h3">+ ADD CONTENT</h4></a>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+          <button mat-button (click)="displayAll()" class="library_category_button" #focusButton>VIEW ALL</button>
+          <button mat-button [matMenuTriggerFor]="menu" class="library_category_button">BY CATEGORY<span class="caret"></span></button>
+            <mat-menu #menu="matMenu">    
+              <button mat-menu-item id="button-mat">BY CATEGORY</button>
+            </mat-menu>      
+        </div>
+    </div>
+    <div class="row">
+      <div class="container-fluid e_care_border" id="library_card">
+         <ul class="form-inline" >
+           <li *ngFor="let card of cards;" class="col-lg-4 my-3">
+             <img class="img-fluid" id="card_image" src="../../../assets/{{card}}.jpg">
+             <span class="card_description col-lg-9 col-md-11 col-sm-10"><b>Taking your blood pressure</b></span>
+             <span class="card_description col-lg-3 col-md-1 col-sm-2 text-right" id="edit-card"><a>EDIT</a></span>
+            </li>
+         </ul>
+    </div>
+  </div>
+  <div id="bottom" class="ml-0">
+      <a href=""><span class="flaticon-download-1"></span> Archieve</a>
+      <a href=""><span class="flaticon-garbage"></span> Delete</a>
     </div>

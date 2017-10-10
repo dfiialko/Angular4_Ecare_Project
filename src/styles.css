@@ -8,10 +8,28 @@ html{
     
 }
 .e_care_button{
-    border-color: rgba(216,0,86,1);
-    background-color: rgba(216,0,86,1);
+    border-color: #D80056!important;
+    background-color: #D80056!important;
     color:white;
+}
+.e_care_button:hover,
+.e_care_button:focus,
+.e_care_button:active{
+    border-color: #D80056!important;
+    background-color: #D80056!important;
+    outline: none;
 }
 .e_care_h3{
     font-weight: bold;
+}
+.word_wrap{
+    word-wrap:break-word;
+}
+.e_care_border
+{
+   border-radius: 10px;
+   border: solid 1px lightgrey;
+   padding-top:2%;
+   padding-left:1%;
+   padding-right:2%;
 }

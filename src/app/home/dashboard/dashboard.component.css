@@ -1,11 +1,11 @@
 .dashboard_notification
 {
-    font-size: 2rem!important;
+    font-size: 1.7rem!important;
     font-weight: bold;
     color:white!important;
 }
-.dashboard_notification i:before{
-    font-size: 2rem!important;
+.dashboard_notification span:before{
+    font-size: 1.7rem!important;
     padding-right: 19px;
     color:white!important;
 }

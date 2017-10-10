@@ -19,8 +19,7 @@
          <nav class="ml-md-5 mt-md-5 text-center"> 
            <ul class="pagination" id="patient_paginator"> 
              <li class="page-item"> 
-               <a class="page-link" (click)="previousClickPagination()"> 
-                 <</a> 
+               <a class="page-link" (click)="previousClickPagination()"><</a> 
              </li> 
              <ng-container *ngFor="let user of users;let i=index;"> 
                <li class="page-item" *ngIf="(i+1)%5==0"> 
@@ -52,6 +51,7 @@
     </ul>
     <ul class="text-left">
     </ul>
+
   </div>
 </div>
 </div>

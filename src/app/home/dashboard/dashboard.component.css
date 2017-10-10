@@ -1,0 +1,14 @@
+.dashboard_notification
+{
+    font-size: 1.4rem!important;
+    font-weight: bold;
+    color:white!important;
+}
+.dashboard_notification span:before{
+    font-size: 1.7rem!important;
+    padding-right: 19px;
+    color:white!important;
+}
+#dashboard_data_on_patients{
+    background-color: grey;
+}

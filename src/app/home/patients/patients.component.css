@@ -1,35 +1,19 @@
 
-.hideOverflow
-{
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-    width:100%;
-    display:block;
-}
-
-#patients_container ul{
+ul{
     list-style-type: none;
-    color:black;
     padding: 0;
 }
-#patients_container h4{
-    font-weight: bold;
-}
-#user_profile_glyph{
+.user_profile_glyph{
     font-size: 6rem;
 }
 #patient_profile_box{
 border-radius: 2px;
 border: groove 1px;
-white-space: nowrap;
-min-width: auto;
-max-width: auto;
 }
 #patient_paginator{
  color:gray;
 }
-@media(max-width:500px){
+/* @media(max-width:500px){
     #patient_profile_box{
         padding-left:0rem!important;
         width:190%!important;
@@ -46,19 +30,5 @@ max-width: auto;
     padding-left:0rem!important;
     width:170%!important;
 }
-  }
-  
-  /* // Small devices (landscape phones, less than 768px) */
-  @media (max-width: 767px) { 
+  } */
 
-  }
-  
-  /* // Medium devices (tablets, less than 992px) */
-  @media (max-width: 991px) {  
-    
-  }
-  
-  /* // Large devices (desktops, less than 1200px) */
-  @media (max-width: 1199px) { 
-   
-  }

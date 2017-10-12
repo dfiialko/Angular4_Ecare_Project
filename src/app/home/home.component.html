@@ -8,49 +8,49 @@
 <span class="flaticon-house"></span> DASHBOARD</a>
       </li>
       <li class="nav-item" [ngClass]="{'selected_item': selectedItem === 'PATIENTS'}">
-        <a class="nav-link" (click)="changeComponent('PATIENTS')" routerLink="patients" >
+        <a class="nav-link" (click)="changeComponent('PATIENTS')" routerLink="patients">
 <span class="flaticon-avatar"></span>PATIENTS</a>
       </li>
       <li class="nav-item" [ngClass]="{'selected_item': selectedItem === 'MY ALERTS'}">
-        <a class="nav-link" (click)="changeComponent('MY ALERTS')" routerLink="alerts" >
+        <a class="nav-link" (click)="changeComponent('MY ALERTS')" routerLink="alerts">
 <span class="flaticon-star"></span>MY ALERTS</a>
       </li>
       <li class="nav-item" [ngClass]="{'selected_item': selectedItem === 'MY MESSAGES'}">
-        <a class="nav-link d-none d-lg-block" (click)="changeComponent('MY MESSAGES')" routerLink="myMessages" >
+        <a class="nav-link d-none d-lg-block" (click)="changeComponent('MY MESSAGES')" routerLink="myMessages">
 <span class="flaticon-envelope"></span>MY MESSAGES</a>
-        <a class="nav-link d-block d-lg-none" (click)="changeComponent('MESSAGES')" routerLink="myMessages" >
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('MESSAGES')" routerLink="myMessages">
 <span class="flaticon-envelope"></span>MESSAGES</a>
       </li>
       <li class="nav-item" [ngClass]="{'selected_item': selectedItem === 'TREATMENT ALERTS'}">
         <a class="nav-link d-none d-lg-block" (click)="changeComponent('TREATMENT ALERTS')" routerLink="treatmentAlerts">
 <span class="flaticon-speaker"></span>TREATMENT ALERTS</a>
-        <a class="nav-link d-block d-lg-none" (click)="changeComponent('ALERTS')" routerLink="treatmentAlerts" >
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('ALERTS')" routerLink="treatmentAlerts">
 <span class="flaticon-speaker"></span>ALERTS</a>
       </li>
       <li class="nav-item" [ngClass]="{'selected_item': selectedItem === 'TREATMENT TASKS'}">
         <a class="nav-link d-none d-lg-block" (click)="changeComponent('TREATMENT TASKS')" routerLink="treatmentTasks">
 <span class="flaticon-book"></span>TREATMENT TASKS</a>
-        <a class="nav-link d-block d-lg-none" (click)="changeComponent('TASKS')" routerLink="treatmentTasks" >
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('TASKS')" routerLink="treatmentTasks">
 <span class="flaticon-book"></span>TASKS</a>
       </li>
       <li class="nav-item" [ngClass]="{'selected_item': selectedItem === 'TREATMENT PLANS'}">
-        <a class="nav-link d-none d-lg-block" (click)="changeComponent('TREATMENT PLANS')" routerLink="treatmentPlans" >
+        <a class="nav-link d-none d-lg-block" (click)="changeComponent('TREATMENT PLANS')" routerLink="treatmentPlans">
 <span class="flaticon-heart"></span>TREATMENT PLANS</a>
-        <a class="nav-link d-block d-lg-none" (click)="changeComponent('PLANS')" routerLink="treatmentPlans" >
+        <a class="nav-link d-block d-lg-none" (click)="changeComponent('PLANS')" routerLink="treatmentPlans">
 <span class="flaticon-heart"></span>PLANS</a>
       </li>
       <li class="nav-item" [ngClass]="{'selected_item': selectedItem === 'LIBRARY'}">
-        <a class="nav-link" (click)="changeComponent('LIBRARY')" routerLink="library" >
+        <a class="nav-link" (click)="changeComponent('LIBRARY')" routerLink="library">
 <span class="flaticon-copy"></span>LIBRARY</a>
       </li>
       <li class="nav-item" [ngClass]="{'selected_item': selectedItem === 'HEALTH RESOURCES'}">
-        <a class="nav-link d-none d-lg-block" (click)="changeComponent('HEALTH RESOURCES')" routerLink="healthResources" >
+        <a class="nav-link d-none d-lg-block" (click)="changeComponent('HEALTH RESOURCES')" routerLink="healthResources">
 <span class="flaticon-glasses"></span>HEALTH RESOURCES</a>
         <a class="nav-link d-block d-lg-none" (click)="changeComponent('RESOURCES')" routerLink="healthResources">
 <span class="flaticon-glasses"></span>RESOURCES</a>
       </li>
-      <li class="nav-item mb-5" [ngClass]="{'selected_item': selectedItem === 'CARE PROVIDER DIRECTORY'}">
-        <a class="nav-lin d-none d-xl-block" (click)="changeComponent('CARE PROVIDER DIRECTORY')" routerLink="careProvider" >
+      <li class="nav-item mb-5 pb-5" [ngClass]="{'selected_item': selectedItem === 'CARE PROVIDER DIRECTORY'}">
+        <a class="nav-link d-none d-xl-block" (click)="changeComponent('CARE PROVIDER DIRECTORY')" routerLink="careProvider">
 <span class="flaticon-phone-call"></span>CARE PROVIDER DIRECTORY</a>
         <a class="nav-link d-block d-xl-none" (click)="changeComponent('DIRECTORY')" routerLink="careProvider">
 <span class="flaticon-phone-call"></span>DIRECTORY</a>
@@ -59,72 +59,71 @@
   </ul>
   <!-- The END of Sidebar for laptop users -->
   <!-- Togglable Topbar -->
-  <nav id="topbar" class="navbar navbar-expand-md navbar-light m-auto  ">
-    <div class="container m-auto">
-      <span id="arrowLeft" class="glyphicon glyphicon-menu-left"></span>
-      <a class="navbar-brand m-auto" href="#">{{component}}</a>
-      <button class="navbar-toggler m-auto" data-toggle="collapse" data-target="#topNav"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="topNav">
-        <ul class="navbar-nav m-auto float-right"style="flex-direction:row">
-          <li class="nav-item">
-            <button class="btn btn-primary e_care_button"><a class="nav-link" style="text-decoration: none;color:white" href="#">My Account</a></button>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Help</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" (click)="signOut()">Sign Out</a>
-          </li>
-        </ul>
-      </div>
+  <nav id="topbar" class="navbar navbar-expand-md navbar-light m-auto">
+    <span id="arrowLeft" class="glyphicon glyphicon-menu-left"></span>
+    <a class="navbar-brand m-auto" href="#">{{component}}</a>
+    <button class="navbar-toggler m-auto" data-toggle="collapse" data-target="#topNav"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse" id="topNav">
+      <ul class="navbar-nav float-right" style="flex-direction:row">
+        <li class="nav-item">
+          <button class="btn btn-primary e_care_button"><a class="nav-link" style="text-decoration: none;color:white" href="#">My Account</a></button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="signOut()">Sign Out</a>
+        </li>
+      </ul>
     </div>
   </nav>
-  <!--mobile menu *************************************************-->
 
-  <ul class="h-100 w-25 sticky-top d-md-none nav flex-column float-left bg-dark mt" id="sidebar">
-    <li class="nav-item m-3"  (click)="changeComponent('DASHBOARD')">
-      <a  class="nav-link" routerLink="dashboard">
+  <!--mobile menu *************************************************-->
+  <ul class="h-100 sticky-top d-md-none nav flex-column float-left bg-dark mt" style="width:15%;" id="sidebar">
+    <li class="nav-item align-self-center" (click)="changeComponent('DASHBOARD')">
+      <a class="nav-link" routerLink="dashboard">
 <span class="flaticon-house"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('PATIENTS')" routerLink="patients">
 <span class="flaticon-avatar"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('MY ALERTS')" routerLink="alerts">
 <span class="flaticon-star"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('MY MESSAGES')" routerLink="myMessages">
 <span class="flaticon-envelope"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('ALERTS')" routerLink="treatmentAlerts">
 <span class="flaticon-speaker"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('TASKS')" routerLink="treatmentTasks">
 <span class="flaticon-book"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('PLANS')" routerLink="treatmentPlans">
 <span class="flaticon-heart"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('LIBRARY')" routerLink="library">
 <span class="flaticon-copy"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('RESOURCES')" routerLink="healthResources">
 <span class="flaticon-glasses"></span></a>
     </li>
-    <li class="nav-item m-3">
+    <li class="nav-item align-self-center">
       <a class="nav-link" (click)="changeComponent('DIRECTORY')" routerLink="careProvider">
 <span class="flaticon-phone-call"></span></a>
     </li>
   </ul>
   <div class="d-inline w-75 float-left" id="contentContainer">
-    <router-outlet ></router-outlet>
+    <router-outlet></router-outlet>
   </div>
   <div id="footer"></div>
 </div>

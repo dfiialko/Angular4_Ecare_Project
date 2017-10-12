@@ -20,7 +20,7 @@ export class PatientsComponent implements OnInit {
   // users: Array<any>[] = [];
 
   users: Array<Patient> = [{ email: 'peter@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
-  { email: 'verylongemailgoAwayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
+  { email: 'verylongemailgoAwasdassdsadsaike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
   { email: 'goAwayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'female' },
   { email: 'peter@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
   { email: 'peter@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },

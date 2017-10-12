@@ -1,51 +1,28 @@
-<div class="container w-100" id="login_container" style="background-color:rgba(25, 40, 63, 1)">
-  <form class="form-horizontal" id="login_form_container">
-      <div class="align-items-center mx-auto text-center w-50" *ngIf="loggedIn === false">         
-          <app-spinner id="login_spinner" [ngStyle]="{'display': showhide ? 'none' : 'block'}"></app-spinner>
-          </div>
-    <div class="row">
-      <div class="col-12 text-center">
-        <img class="img-fluid" src="./assets/e-care.PNG" alt="e-care">     
+<div class="container" id="login_container">
+
+  <div class="row">
+    <form class="m-auto" style="background-color:white;">
+      <img class="img-fluid m-auto" src="./assets/e-care.PNG" alt="e-care">
+      <h4 class="text-white bg-dark text-center p-5 mt-0">LOGIN TO YOUR ACCOUNT</h4>
+
+      <div class="form-group row mt-5" style="margin-left:9%; margin-right:9%;">
+        <label class="flaticon-envelope col-md-2 d-none d-md-block" for="login_email_input"></label>
+        <input class="form-control col-md-10" #email type="email" name="email" placeholder="Email Address" required>
       </div>
-    </div>
-    <div [ngStyle]="{'opacity': showhide? '1' : '0.1'}" class="container w-50 mx-auto text-center p-0" id="login_form">
-      <div class="row w-100 mx-auto">
-        <div class="col-12 col-xs-12 text-center p-3" id="login_heading">
-            <h4 class="w-100 p-0">
-              LOGIN TO YOUR ACCOUNT
-            </h4>
-          </div>
-        </div>
-    <!--Email Input -->
-    <div class="row mt-5" id="login_email_input_row">
-      <div class="col-md-3 col-sm-2 col-xs-1 text-right ml-0 pl-0 pt-3">
-        <label for="login_email_input" class="flaticon-envelope"></label>
+
+      <div class="form-group row mb-5" style="margin-left:9%; margin-right:9%;">
+        <label class="flaticon-padlock col-md-2 d-none d-md-block" for="login_password_input"></label>
+        <input class="form-control col-md-10 mr-0" #password type="password" placeholder="Password" required>
       </div>
-      <div class="col-md-8 col-sm-9 col-xs-10 text-right mb-3 pt-3" id="login_label_email">
-        <input id="login_email_input" class="form-control" #email type="text" name="email" placeholder="Email Address" size=40 required [(ngModel)]="test">
+
+      <div class="row mx-5">
+        <div class="alert alert-danger col-md-12 text-center" *ngIf="authenticated === false"><strong>Email or password is incorrect</strong></div>
       </div>
-    </div>
-    <!--Password Input -->
-    <div class="row">
-      <div class="col-md-3 col-sm-2 col-xs-1 text-right pl-0 ml-0 pt-3">
-        <label for="login_password_input" class="flaticon-padlock"></label>
+
+      <div class="row mb-5" style="margin-left:15%; margin-right:9%;">
+        <a href="#" class="align-self-center">Forget your password?</a>
+        <button class="btn btn-primary btn-lg ml-auto" (click)="logInClick()">LOGIN</button>
       </div>
-      <div class="col-md-8 col-sm-9 col-xs-10 text-right mb-3 pt-3">
-        <input id="login_password_input" class="form-control border-top-0 border-right-0 border-left-0"
-        #password type="password" placeholder="Password" size=40 required>
-      </div>
-    </div>
-    <!-- Error Message -->
-    <div class="row">
-      <!-- <div class="alert alert-danger col-md-12" ><h3 *ngIf="authenticated === false">Email or password is incorrect *</h3></div> -->
-      <div class="alert alert-danger col-md-10 m-auto" *ngIf="authenticated === false" ><strong>Email or password is incorrect</strong></div>
-    </div>
-    <!-- Forgot Password -->
-    <div class="row mt-5 mb-5" id="login_forgot_password">
-        <div class="col-xl-6 col-lg-7 col-md-6 col-sm-6 col-xs-4 text-xl-right text-lg-right text-md-center text-sm-center text-xs-left"><u><a href="#" (click)="resetPasswordClicked()" id="login_forget_password">Forgot your password?</a></u></div>
-        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-6 text-xl-right text-lg-center text-md-center text-sm-center text-xs-center"><button type="submit" class="btn btn-primary py-3 px-4 mb-3" (click)="logInClick()" id="login_button">LOGIN</button></div>      
-        <div class="col-xl-1 col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
-      </div>
-     </div>    
-  </form>
+    </form>
+  </div>
 </div>

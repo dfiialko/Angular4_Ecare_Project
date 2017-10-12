@@ -32,32 +32,6 @@
     </div>
   </div>
 
-  <!-- <div class="col-11 col-lg-5 mb-5 mr-5" id="patient_profile_box" style="word-wrap: break-word;" *ngFor="let user of users | slice:fromIndex:toIndex; let i = index">
-
-    <ul class="">
-      <li class="mt-4 pl-4">
-
-        <span *ngIf="user.gender=='male'" class="glyphicon glyphicon-user my-auto d-none d-md-inline user_profile_glyph"></span>
-        <span *ngIf="user.gender=='female'" class="glyphicon glyphicon-queen my-auto d-none d-md-block user_profile_glyph"></span>
-
-        <strong>{{user.name}}</strong>
-        <button mat-button [matMenuTriggerFor]="menu" id="menu-button"><span class="flaticon-settings"></span></button>
-
-      </li>
-
-      <li id="mat-menu">
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item type="button" (click)="getUser(user)">UPDATE</button>
-          <button mat-menu-item type="button" (click)="deleteUser(user._id)" routerLink="../patients">DELETE</button>
-        </mat-menu>
-      </li>
-
-      <li class=""><span class="flaticon-envelope pr-3"></span>{{user.email}}</li>
-      <li><span class="flaticon-heart pr-3"></span>{{user.birth}}</li>
-      <li><span class="flaticon-phone-call pr-3"></span>P: {{user.phone}} </li>
-    </ul>
-  </div> -->
-
   <div class="col-10 col-lg-5 mb-5 mr-5 " id="patient_profile_box" style="word-wrap: break-word;" *ngFor="let user of users | slice:fromIndex:toIndex; let i = index">
 
     <div class="float-left d-none d-md-block my-5">

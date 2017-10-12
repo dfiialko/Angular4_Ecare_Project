@@ -13,22 +13,3 @@ border: groove 1px;
 #patient_paginator{
  color:gray;
 }
-/* @media(max-width:500px){
-    #patient_profile_box{
-        padding-left:0rem!important;
-        width:190%!important;
-    }
-}
-@media (max-width: 575px) { 
-#patients_container i{
-    display:none;
-}
-#patients_container li{
-    padding-left: 0px;
-}
-#patient_profile_box{
-    padding-left:0rem!important;
-    width:170%!important;
-}
-  } */
-

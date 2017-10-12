@@ -2,8 +2,8 @@ import { SpinnerComponent } from './../shared/spinner/spinner.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from "@angular/router";
-import { HttpModule } from "@angular/http";
+import { Routes, RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
@@ -21,7 +21,7 @@ import { CareProviderDirectoryComponent } from './home/care-provider-directory/c
 import { AddPatientComponent } from './home/patients/add-patient/add-patient.component';
 import { DataService } from './data.service';
 
-//Material Designs
+// Material Designs
 import {MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatTableModule, MatTabsModule,MatProgressSpinnerModule, MatCheckboxModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdatePatientsComponent } from './home/patients/update-patients/update-patients.component';

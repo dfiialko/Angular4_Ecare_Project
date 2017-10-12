@@ -22,10 +22,6 @@
 {
     font-size: 18px;
 }
-
-/* #sidebar li a:hover,#sidebar li a:focus{
-    color:white;
-} */
 #sidebar span{
     padding-left:15px;
     padding-right:15px;
@@ -48,6 +44,7 @@ text-decoration: none;
 #sidebar_nav_container{
     padding-left: 0px;
     padding-right: 0px;
+    background-color: rgba(25,40,63,1);
 }
 .selected_item
 {

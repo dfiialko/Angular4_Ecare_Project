@@ -58,27 +58,6 @@
     </div>
   </ul>
   <!-- The END of Sidebar for laptop users -->
-  <!-- Togglable Topbar -->
-  <nav id="topbar" class=" navbar sticky-top navbar-expand-md navbar-light m-auto">
-    <span id="arrowLeft" class="glyphicon glyphicon-menu-left"></span>
-    <a class="navbar-brand m-auto" href="#">{{component}}</a>
-    <button class="navbar-toggler m-auto" data-toggle="collapse" data-target="#topNav"><span class="navbar-toggler-icon"></span></button>
-
-    <div class="collapse navbar-collapse" id="topNav">
-      <ul class="navbar-nav float-right" style="flex-direction:row">
-        <li class="nav-item">
-          <button class="btn btn-primary e_care_button"><a class="nav-link" style="text-decoration: none;color:white" href="#">My Account</a></button>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Help</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" (click)="signOut()">Sign Out</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
   <!--mobile menu *************************************************-->
   <ul class="h-100 sticky-top d-md-none nav flex-column float-left bg-dark mt" style="width:15%;" id="sidebar">
     <li class="nav-item align-self-center" (click)="changeComponent('DASHBOARD')">
@@ -122,6 +101,27 @@
 <span class="flaticon-phone-call"></span></a>
     </li>
   </ul>
+  <!-- Togglable Topbar -->
+  <nav id="topbar" class=" navbar sticky-top navbar-expand-md navbar-light m-auto">
+    <span id="arrowLeft" class="glyphicon glyphicon-menu-left"></span>
+    <a class="navbar-brand m-auto" href="#">{{component}}</a>
+    <button class="navbar-toggler m-auto" data-toggle="collapse" data-target="#topNav"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse" id="topNav">
+      <ul class="navbar-nav float-right" style="flex-direction:row">
+        <li class="nav-item">
+          <button class="btn btn-primary e_care_button"><a class="nav-link" style="text-decoration: none;color:white" href="#">My Account</a></button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="signOut()">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="d-inline w-75 float-left" id="contentContainer">
     <router-outlet></router-outlet>
   </div>

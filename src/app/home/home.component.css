@@ -58,8 +58,9 @@ text-decoration: none;
 }
 #topbar
 {   
-    background-color: rgba(89,104,111,1);
+    background-color: rgba(89,104,111,0.8);
     border-radius: 0;
+    position: sticky;
 }
 
 #footer{

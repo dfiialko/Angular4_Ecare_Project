@@ -5,16 +5,15 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataService {
 
-  result:any;
+  result: any;
 
   constructor(private _http: Http) { }
 
-  getUsers() 
-  {
+  getUsers() {
     console.log(this.result);
-    return this._http.get("http://208.75.74.123:10020/api/getUser")
-    .map(result => this.result = result.json().data);
-      
+    return this._http.get('http://208.75.74.123:10020/api/getUser')
+      .map(result => this.result = result.json().data);
+
   }
 
   // addUser(data)
@@ -23,18 +22,16 @@ export class DataService {
   //   return this._http.post('http://localhost:10020/api/addUser',data).map(res=>res.json());
   // }
 
-  deleteUser(userID)
-  {
+  deleteUser(userID) {
     console.log('deleting user');
     console.log(userID);
-    return this._http.delete('http://208.75.74.123:10020/api/deleteUser/'+ userID).map(res=>res.json());
+    return this._http.delete('http://208.75.74.123:10020/api/deleteUser/' + userID).map(res => res.json());
   }
 
 
-  logIn(userInfo)
-  {
+  logIn(userInfo) {
     console.log('logging in');
-    return this._http.post('http://208.75.74.123:10020/api/oauth/token', userInfo).map(res=>res.json());
-  } 
+    return this._http.post('http://208.75.74.123:10020/api/oauth/token', userInfo).map(res => res.json());
+  }
 
 }

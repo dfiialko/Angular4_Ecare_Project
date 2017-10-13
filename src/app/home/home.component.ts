@@ -7,7 +7,6 @@ import { PlatformLocation } from '@angular/common';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
   zone: NgZone;
   @Input() homeUserName;
   @Output() logInEmitterHome = new EventEmitter<any>();

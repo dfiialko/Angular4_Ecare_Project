@@ -11,7 +11,7 @@ export class DataService {
 
   getUsers() {
     console.log(this.result);
-    return this._http.get("http://208.75.74.123:10020/api/getUser")
+    return this._http.get('http://208.75.74.123:10020/api/getUser')
       .map(result => this.result = result.json().data);
 
   }

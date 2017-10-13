@@ -10,22 +10,18 @@ export class AppComponent {
   page;
   username;
 
-  ngOnInit()
-  {
-    this.page = 'logInPage';
-    // this.page = "logInPage";
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnInit() {
+    this.page = 'homePage';
   }
 
 
-  changePage(type)
-  {
+  changePage(type) {
     this.page = type;
   }
 
-  sendUserName(userName)
-  {
+  sendUserName(userName) {
     this.username = userName;
   }
-
 
 }

@@ -49,10 +49,15 @@
           <button mat-menu-item type="button" (click)="deleteUser(user._id)" routerLink="../patients">DELETE</button>
         </mat-menu>
       </div>
-
-      <p class="m-auto"><span class="flaticon-envelope pr-3"></span>{{user.email}}</p>
-      <p class="m-auto"><span class="flaticon-heart pr-3"></span>{{user.birth}}</p>
-      <p class="m-auto pb-2"><span class="flaticon-phone-call pr-3"></span>P: {{user.phone}} </p>
+      <div class="form-inline">
+        <div class="col-xs-12"><span class="flaticon-envelope pr-3"></span><p class="m-auto">{{user.email}}</p></div>
+        <div class="col-xs-12">
+          <span class="flaticon-heart pr-3"></span><p class="m-auto">{{user.birth}}</p>
+        </div>
+      <div class="col-xs-12">
+        <span class="flaticon-phone-call pr-3"></span>
+        <p class="m-auto pb-2">{{user.phone}}</p></div>
+    </div>
     </div>
   </div>
 </div>

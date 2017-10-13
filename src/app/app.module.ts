@@ -22,7 +22,9 @@ import { AddPatientComponent } from './home/patients/add-patient/add-patient.com
 import { DataService } from './data.service';
 
 // Material Designs
-import {MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatTableModule, MatTabsModule,MatProgressSpinnerModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatMenuModule,
+  MatToolbarModule, MatIconModule, MatTableModule, MatTabsModule,
+  MatProgressSpinnerModule, MatCheckboxModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdatePatientsComponent } from './home/patients/update-patients/update-patients.component';
 

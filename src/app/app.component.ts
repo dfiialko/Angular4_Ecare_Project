@@ -12,7 +12,7 @@ export class AppComponent {
 
   ngOnInit()
   {
-    this.page = "homePage";
+    this.page = 'logInPage';
     // this.page = "logInPage";
   }
 

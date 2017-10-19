@@ -33,7 +33,7 @@ export class LogInComponent implements OnInit {
     this.showhide = true;
     if (attempt) {
       localStorage.setItem('auth_token', this.token[0].access_token);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/dashboard']);
       this.authorization_token = localStorage.getItem('auth_token');
     }else {
       this.authenticated = false;

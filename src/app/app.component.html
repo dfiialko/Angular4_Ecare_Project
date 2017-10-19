@@ -1,4 +1,5 @@
-<div *ngIf="page==='logInPage'">
+<router-outlet></router-outlet>
+<!-- <div *ngIf="page==='logInPage'">
         <app-log-in (resetPasswordEmitter)="changePage($event)" (homePageEmitter)="changePage($event)" (userNameEmitter)="sendUserName($event)">
         </app-log-in>
 </div>
@@ -6,5 +7,5 @@
         <app-password-reset [email]=u sername (logInEmitterPassword)="changePage($event)"> </app-password-reset>
 </div>
 <div id="homeDiv" *ngIf="page==='homePage'">
-        <app-home [homeUserName]="username" id="homeApp" (logInEmitterHome)="changePage($event)"></app-home>
-</div>
+        <app-home  id="homeApp" (logInEmitterHome)="changePage($event)"></app-home>
+</div> -->

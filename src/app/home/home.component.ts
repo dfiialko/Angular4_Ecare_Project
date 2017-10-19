@@ -1,32 +1,33 @@
-import { Routes, Router} from '@angular/router';
+import { HomeService } from './home.service';
+import { Routes, Router, ActivatedRoute, Params, RouterModule, Data } from '@angular/router';
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer, NgZone } from '@angular/core';
 import { PlatformLocation } from '@angular/common';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [HomeService]
 })
 export class HomeComponent implements OnInit {
-  zone: NgZone;
-  @Input() homeUserName;
-  @Output() logInEmitterHome = new EventEmitter<any>();
-  @ViewChild('link') link: ElementRef;
-  router: Router;
+  // Receives array of routerLinks and their Names
+  websiteLinks = new Array();
   component = '';
-  changed = true;
-  selectedItem: string;
-  constructor(location: PlatformLocation, renderer: Renderer) {
-    location.onPopState(() => { console.log('pressed'); });
-  }
+  constructor(private activeRoute: ActivatedRoute,
+              private homeService: HomeService,
+              private router: Router) {
+              }
 
   ngOnInit() {
-    this.component = 'PATIENTS';
+    this.websiteLinks = this.homeService.getLinks();
+    this.activeRoute.firstChild.data.subscribe((data:Data)=>{this.component = data['message']});
+   }
+
+   changeHeaderComponent(name){
+    this.component = name;
   }
-  changeComponent(componentInput) {
-    this.selectedItem = componentInput;
-    this.component = componentInput;
   }
-  signOut() {
-    this.logInEmitterHome.emit('logInPage');
-  }
-}
+
+
+
+

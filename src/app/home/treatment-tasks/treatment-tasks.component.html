@@ -30,9 +30,9 @@
                 <div class="form-group row mx-auto mt-5">
                   <label for="library" class="col">Copy from library</label>
                   <select class="form-control col-md-9" name="library" size="1">
-                        <option hidden >Search Tasks in Library</option>
-                        <option value=""></option>
-                  </select>
+                            <option hidden >Search Tasks in Library</option>
+                            <option value=""></option>
+                      </select>
                 </div>
                 <div class="form-group row mx-auto">
                   <label for="name" class="col">Name</label>
@@ -43,31 +43,69 @@
                   <label class="col">Event</label>
                   <div class="form-check col-md-9 pl-0">
                     <label class="form-check-label pl-md-0 d-block d-md-inline"> 
-                        <input type="radio" class="form-check-input" name="event"> Medication</label>
+                            <input type="radio" class="form-check-input" checked (click)="setTask('medication')" name="event"> Medication</label>
     
                     <label class="form-check-label d-block d-md-inline">
-                        <input type="radio" class="form-check-input" name="event"> Measurement</label>
+                            <input type="radio" class="form-check-input" (click)="setTask('measurement')" name="event"> Measurement</label>
     
                     <label class="form-check-label d-block d-md-inline">
-                        <input type="radio" class="form-check-input" name="event"> Record Syptoms</label>
+                            <input type="radio" class="form-check-input" (click)="setTask('record-syptoms')" name="event"> Record Syptoms</label>
                   </div>
                 </div>
     
-                <div class="form-group row mx-auto mt-4">
-                  <label class="col-md-3" for="response">Response</label>
-                  <input type="number" class="form-contol col-md-6 mr-4">
-                  <select class="col">
-                      <option default>Tablet(s)</option>
-                  </select>
+                <!-- Medication Form -->
+                <div id="medicationForm" *ngIf="task==='medication'">
+                  <div class="form-group row mx-auto mt-4">
+                    <label class="col-md-3" for="response">Dose</label>
+                    <input type="number" class="form-contol col-md-6 mr-4" placeholder="Quantity">
+                    <select class="col">
+                          <option default>Tablet(s)</option>
+                          <option>Pill</option>
+                          <option>Liquid</option>
+                      </select>
+                  </div>
+    
+                  <div class="form-group row mx-auto mt-4">
+                    <label class="col-md-3"></label>
+                    <input type="text" class="form-contol col-md-6 mr-4" placeholder="Unit / eg Melformin 500mg">
+                    <select class="col">
+                            <option default>Oral</option>
+                            <option>IV</option>
+                            <option>Tropical</option>
+                            <option>ophthalmic</option>
+                        </select>
+                  </div>
+    
+                  <div class="form-group row mx-auto mt-4">
+                    <label for="notes" class="col">Notes</label>
+                    <input type="text" name="notes" class="form-control col-md-9 ml-auto" placeholder="Take before bed, take before eating">
+                  </div>
                 </div>
     
-                <div class="form-group row mx-auto">
-                  <input class="form-control col-md-9 ml-auto" type="text" name="responseDescription" placeholder="Melformin 500mg">
+                <!-- Measurement Form -->
+                <div id="measurementForm" *ngIf="task==='measurement'">
+                  <div class="form-group row mx-auto mt-4">
+                    <label class="col-md-3">Measurement Type</label>
+                    <input type="text" class="form-contol col" placeholder="Heart_rate, Systolic, Diastolic, Weight">
+                  </div>
+    
+                  <div class="form-group row mx-auto mt-4">
+                    <label class="col-md-3" for="response">Measurement Value</label>
+                    <input type="number" class="form-contol col-md-6 mr-4" placeholder="Value of the measurement">
+                    <select class="col">
+                            <option default>KG</option>
+                            <option>LBS</option>
+                            <option>mmHg</option>
+                            <option>MG/DL</option>
+                            <option>MMOL</option>
+                            <option>STEPS</option>
+                        </select>
+                  </div>
                 </div>
     
                 <div class="form-group row mx-auto">
                   <label class="col" for="instructions">Instructions</label>
-                  <input class="form-control col-md-9 ml-auto" type="text" placeholder="Take before bed time">
+                  <input class="form-control col-md-9 ml-auto" type="text" placeholder="Anything to say to the patient">
                 </div>
               </form>
             </div>

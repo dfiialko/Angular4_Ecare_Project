@@ -10,6 +10,7 @@ export class HealthResourcesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

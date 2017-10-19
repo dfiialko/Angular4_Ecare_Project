@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 export class DataService {
 
   result: any;
-
+  
   constructor(private _http: Http) { }
 
   getUsers() {

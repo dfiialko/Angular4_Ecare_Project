@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ValidatorService } from './../../shared/form_validation/validator.service';
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../data.service';
@@ -19,14 +20,11 @@ export class LogInComponent implements OnInit {
   @ViewChild('email') emailRef: ElementRef;
   @ViewChild('password') passwordRef: ElementRef;
   @ViewChild('spinner') spinner: ElementRef;
-  @Output() signInEmitter = new EventEmitter<any>();
-  @Output() homePageEmitter = new EventEmitter<any>();
-  @Output() resetPasswordEmitter = new EventEmitter<any>();
-  @Output() userNameEmitter = new EventEmitter<any>();
 
-  constructor(private _dataService: DataService, private _validator: ValidatorService) { }
+  constructor(private _dataService: DataService,
+              private _validator: ValidatorService,
+              private router: Router) { }
   ngOnInit() { }
-
   /* Triggered when JSON request returns success
      Saves token in the Local Storage
      Gives access to the token */
@@ -35,7 +33,7 @@ export class LogInComponent implements OnInit {
     this.showhide = true;
     if (attempt) {
       localStorage.setItem('auth_token', this.token[0].access_token);
-      this.homePageEmitter.emit('homePage');
+      this.router.navigate(['/home']);
       this.authorization_token = localStorage.getItem('auth_token');
     }else {
       this.authenticated = false;
@@ -71,6 +69,6 @@ export class LogInComponent implements OnInit {
   // Triggers when the password reset link was clicked
   resetPasswordClicked() {
     console.log('reset password clicked');
-    this.resetPasswordEmitter.emit('passwordPage');
+    // this.resetPasswordEmitter.emit('passwordPage');
   }
 }

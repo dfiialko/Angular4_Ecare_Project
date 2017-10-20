@@ -1,8 +1,6 @@
 import { PaginationServiceService } from './../../pagination-service.service';
-import { User } from './../patients/update-patients/update-patients.component';
 import { Users } from './users.model';
 import { DataService } from './../../data.service';
-import { PlatformLocation } from '@angular/common'
 import { Component, OnInit } from '@angular/core';
 
 @Component({

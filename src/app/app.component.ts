@@ -11,16 +11,13 @@ export class AppComponent {
   page;
   username;
 
-  constructor(private router: Router) { 
-  
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
     // this.page = 'logInPage';
     this.router.navigate(['login']);
 
   }
-
 
   changePage(type) {
     this.page = type;

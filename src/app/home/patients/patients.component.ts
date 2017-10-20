@@ -1,9 +1,8 @@
 import { PaginationServiceService } from './../../pagination-service.service';
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlatformLocation } from '@angular/common'
 import { Patient } from './patientModel/patient.model';
 import { DataService } from '../../data.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-patients',
@@ -13,7 +12,6 @@ import { Router } from '@angular/router';
 })
 export class PatientsComponent implements OnInit {
 
-  @Output() signInEmitterPatient = new EventEmitter<any>();
   page;
   patient: Patient;
   // users: Array<any>[] = [];
@@ -30,13 +28,9 @@ export class PatientsComponent implements OnInit {
   { email: '2@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
   { email: '3@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
   { email: '3emailgoAwayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
-  { email: '3ayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'female' },
-  { email: '3r@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
-  { email: '3er@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' },
-  { email: '3er@gaied.com', name: 'Peter Gaied', birth: '09/09/1990', phone: '2042242828', gender: 'male' }];
+  { email: '3ayMike@gaied.com', name: 'Mike Ooe', birth: '09/09/1990', phone: '2042242828', gender: 'female' }];
 
-  constructor(private _dataService: DataService, private location: PlatformLocation, 
-              router: Router, private pagination:PaginationServiceService) {
+  constructor(private _dataService: DataService, private location: PlatformLocation, private pagination:PaginationServiceService) {
     // Access the Data Service's getUsers() method we defined
     // this._dataService.getUsers().subscribe(res => this.users = res);
 

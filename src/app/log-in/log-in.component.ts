@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { ValidatorService } from './../../shared/form_validation/validator.service';
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../data.service';
 @Component({
   selector: 'app-log-in',

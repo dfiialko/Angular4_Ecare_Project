@@ -1,5 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private activeRoute: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
  

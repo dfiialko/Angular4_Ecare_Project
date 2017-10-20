@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class ValidatorService {
 
 constructor() { }
-validate = false;
+loggedIn = false;
 errorMessage: string;
 
 validateInput(inputValue) {
@@ -19,6 +19,7 @@ validateInput(inputValue) {
         return false;
     }else {
         console.log('no errors');
+        this.loggedIn = true;
         return true;
     }
 }

@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css'],
-  providers: [DataService, ValidatorService]
+  providers: [DataService]
 })
 
 export class LogInComponent implements OnInit {

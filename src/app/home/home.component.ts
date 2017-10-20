@@ -1,3 +1,4 @@
+import { ValidatorService } from './../../shared/form_validation/validator.service';
 import { HomeService } from './home.service';
 import { Routes, Router, ActivatedRoute, Params, RouterModule, Data } from '@angular/router';
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer, NgZone } from '@angular/core';
@@ -15,7 +16,9 @@ export class HomeComponent implements OnInit {
   component = 'DASHBOARD';
   constructor(private activeRoute: ActivatedRoute,
               private homeService: HomeService,
-              private router: Router) {
+              private router: Router,
+              private validate:ValidatorService,
+            private validateService: ValidatorService) {
               }
 
   ngOnInit() {
@@ -25,6 +28,10 @@ export class HomeComponent implements OnInit {
 
    changeHeaderComponent(name){
     this.component = name;
+  }
+
+  signOut(){
+    this.validateService.loggedIn = false;
   }
   }
 

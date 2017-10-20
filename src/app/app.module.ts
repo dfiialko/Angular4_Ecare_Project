@@ -1,3 +1,5 @@
+import { ValidatorService } from './../shared/form_validation/validator.service';
+import { AuthGuardService } from './auth-guard.service';
 import { AppRouting } from './app-routing.module';
 import { SpinnerComponent } from './../shared/spinner/spinner.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -60,7 +62,7 @@ import { UpdatePatientsComponent } from './home/patients/update-patients/update-
      MatProgressSpinnerModule,
      MatCheckboxModule
   ],
-  providers: [DataService],
+  providers: [DataService, AuthGuardService, ValidatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

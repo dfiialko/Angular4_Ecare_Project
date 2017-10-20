@@ -1,3 +1,4 @@
+import { AuthGuardService } from './auth-guard.service';
 import { LogInComponent } from './log-in/log-in.component';
 import { HomeComponent } from './home/home.component';
 import { CareProviderDirectoryComponent } from './home/care-provider-directory/care-provider-directory.component';
@@ -16,7 +17,7 @@ import { NgModule } from '@angular/core';
 
 const appRoutes: Routes = [
 { path: 'login', component: LogInComponent},
-{ path: '', component: HomeComponent, children: [
+{ path: '', canActivate:[AuthGuardService], component: HomeComponent, children: [
     { path: 'patients', component: PatientsComponent, data: {message: 'PATIENTS'} },
     { path: 'alerts', component: MyAlertsComponent, data: {message: 'MY ALERTS'} },
     { path: 'dashboard', component: DashboardComponent, data: {message: 'DASHBOARD'} },

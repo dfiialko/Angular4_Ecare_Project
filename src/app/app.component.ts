@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,9 +11,14 @@ export class AppComponent {
   page;
   username;
 
-  // tslint:disable-next-line:use-life-cycle-interface
+  constructor(private router: Router) { 
+  
+  }
+
   ngOnInit() {
-    this.page = 'homePage';
+    // this.page = 'logInPage';
+    this.router.navigate(['login']);
+
   }
 
 

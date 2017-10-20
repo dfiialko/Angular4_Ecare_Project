@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <div class="row d-inline mb-0 pb-0">
+      <div class="col-12 align-text-bottom ">
+        <h3 class="e_care_h3">Total Patients Enrolled: {{users.length}}</h3>
+      </div>
+      <div class="col-lg-12 align-top text-xl-right text-sm-left text-md-right mb-0 pb-0">
+        <a routerLink="../addPatient" class="btn btn-primary btn-lg p-3 px-5 e_care_button" id="add_patient_button">Add Patient</a>
+      </div>
+    </div>
+    <hr class="border-1 mt-0 pt-0">
+    <div class="row mb-0 pb-0">
+        <div class="col-12">
+          <h3>Patients</h3>
+        </div>
+        <div class="col-lg-12 align-top text-xl-left text-sm-left text-md-left mt-0 mb-0 pb-0">
+            <h5 id="update_patients_path"><a routerLink='../dashboard'>/home</a><a (click)="changePage('patients')"> /  Patients  /</a><b>  {{patient.name}}</b></h5>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid" id="update_patient_main_area">
+      <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 float-left" id="update_patient_profile">
+          <div class="col-lg-12 col-md-12 col-sm-3 d-none d-md-block">
+            <img src="../../../../assets/profile_user.jpg" alt="patient_image" class="img-fluid">
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-8 col-xs-10 d-inline" >
+              <ul id="update_patient_profile_ul">
+                  <li><b>{{patient.name}}</b></li>
+                  <li class="word_wrap" ><span class="flaticon-envelope"></span>{{patient.email}}</li>
+                  <li><span class="flaticon-phone-call"></span>{{patient.phone}}</li>
+                  <li><span class="flaticon-padlock"></span>key</li>
+                </ul>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 mx-auto">
+            <div id="patient-tabs">
+                <mat-tab-group class="demo-tab-group">
+                  <mat-tab label="Treatment Plan">
+                    <div class="demo-tab-content">
+                      <button class="btn btn-primary e_care_button" id="add-treatment-task-btn">Add Treatment Task</button>
+                      <div class="example-container mat-elevation-z8">
+                        <mat-table #table [dataSource]="dataSource">
+                          <!-- Position Column -->
+                          <ng-container matColumnDef="treatmentGroup">
+                            <mat-header-cell *matHeaderCellDef> Treatment Group </mat-header-cell>
+                            <mat-cell *matCellDef="let user"> </mat-cell>
+                          </ng-container>
+                          <!-- Name Column -->
+                          <ng-container matColumnDef="treatmentPlan">
+                            <mat-header-cell *matHeaderCellDef> Treatment Plan </mat-header-cell>
+                            <mat-cell *matCellDef="let user"></mat-cell>
+                          </ng-container> -->
+          
+                          <!-- Weight Column -->
+                          <ng-container matColumnDef="dateEnrolled">
+                            <mat-header-cell *matHeaderCellDef> Date Enrolled </mat-header-cell>
+                            <mat-cell *matCellDef="let user"></mat-cell>
+                          </ng-container> -->
+          
+                          <!-- Color Column -->
+                          <ng-container matColumnDef="status">
+                            <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                            <mat-cell *matCellDef="let user"> </mat-cell>
+                          </ng-container> -->
+                          <!-- Color Column -->
+                          <ng-container matColumnDef="dateCompleted">
+                            <mat-header-cell *matHeaderCellDef> Date Completed </mat-header-cell>
+                            <mat-cell *matCellDef="let user"></mat-cell>
+                          </ng-container>
+          
+                          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          
+                          <mat-row *matRowDef="let row; columns: displayedColumns;">
+                            <button mat-button >BUTTON</button></mat-row>                 
+                        </mat-table>
+                      </div>
+                    </div>
+                  </mat-tab>
+                  <mat-tab label="Treatment Data">
+                    <div class="demo-tab-content">
+                      No Content
+                    </div>
+                  </mat-tab>
+                  <mat-tab label="Messages">
+                    No content
+                  </mat-tab>
+                  <mat-tab label="Care Providers">
+                    <div class="demo-tab-content">
+                    </div>
+                  </mat-tab>
+                  <mat-tab label="Tasks">
+                    No content
+                  </mat-tab>
+                </mat-tab-group>
+              </div>
+            </div>
+        </div>
+        
+      </div>
+   

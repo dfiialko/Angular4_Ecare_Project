@@ -1,0 +1,17 @@
+#update_patient_main_area{
+    background-color: #efefef;
+}
+#update_patient_profile{
+    background-color: white;
+}
+#update_patient_profile_ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+#update_patients_path{
+color:black;
+}
+#update_patients_path a{
+    text-decoration: none;
+    color:black;
+    }

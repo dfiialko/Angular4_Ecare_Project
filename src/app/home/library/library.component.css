@@ -1,0 +1,38 @@
+#library_card ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+#card_image{
+    min-width: 40px;
+}
+.library_category_button{
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: rgba(97,108,112,1);
+    background-color: rgba(229,229,229,1);
+ }
+ .library_category_button:focus{
+    color:white;
+    background-color: rgba(93, 102, 111, 1);
+ }
+ #bottom
+ {
+     margin-left:1%;
+     margin-top:2%;
+ }
+ 
+ #bottom a
+ {
+     color:black;
+ }
+ #library_card a{
+    color:#CD1948 ;
+    font-weight: bold;
+    text-decoration: underline;
+ }
+ @media(max-width:500px){
+    .card_description{
+        font-size: 1rem!important;
+    }
+}

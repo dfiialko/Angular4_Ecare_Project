@@ -1,0 +1,88 @@
+
+#signInContainer
+{
+    margin:0 auto;
+    width:500px;
+}
+
+.form
+{
+    position: relative;
+    margin:40px;
+    margin-top:100px;
+    float: left;
+    border-radius: 20px;
+    border: groove 6px;
+    padding:20px;
+    width:500px;
+}
+
+.formHeader
+{
+    text-align: center;
+    padding:28px;
+}
+
+#h4
+{
+    margin:0px;
+    color:white;
+    
+}
+.header
+{
+    text-align: center;
+}
+
+input
+{
+    padding:13px;
+    padding-top:40px;
+    outline: 0;
+    border-width: 0 0 2px 0;
+    border-color: grey;
+    text-align: center;
+}
+
+#input
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+#submit
+{
+    text-align: center;
+    padding: 40px;
+    padding-top: 50px;
+}
+
+#submit button
+{
+   padding:10px;
+   padding-left: 40px;
+   padding-right: 40px;
+}
+
+#e-care
+{
+    width:470px;
+}
+
+#emailIcon, #nameIcon, #birthIcon, #phoneIcon
+{
+    position: relative;
+    left:50px;
+
+}
+
+.glyphicon {
+    font-size: 22px;
+    color:grey;
+}
+
+.btn
+{
+    background-color: #CD1948;
+    border: #CD1948;
+}

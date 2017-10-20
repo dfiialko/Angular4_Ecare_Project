@@ -1,0 +1,37 @@
+#create_plan_button{
+    color:white;
+    text-decoration: none;
+}
+.treatment_plan_button{
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: rgba(97,108,112,1);
+    background-color: rgba(229,229,229,1);
+ }
+ #border
+ {
+    border-radius: 10px;
+    border: solid 1px lightgrey;
+    padding-top:2%;
+    padding-left:1%;
+    padding-right:2%;
+ }
+ .treatment_plan_button:focus{
+    color:white;
+    background-color: rgba(93, 102, 111, 1);
+ }
+ #table_body{
+    color:#979494;
+    font-weight: 600;
+ }
+ #bottom
+ {
+     margin-left:1%;
+     margin-top:2%;
+ }
+ 
+ #bottom a
+ {
+     color:black;
+ }

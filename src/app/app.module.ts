@@ -18,7 +18,6 @@ import { TreatmentPlansComponent } from './home/treatment-plans/treatment-plans.
 import { LibraryComponent } from './home/library/library.component';
 import { HealthResourcesComponent } from './home/health-resources/health-resources.component';
 import { CareProviderDirectoryComponent } from './home/care-provider-directory/care-provider-directory.component';
-import { AddPatientComponent } from './home/patients/add-patient/add-patient.component';
 import { DataService } from './data.service';
 // Material Designs
 import {MatButtonModule, MatCardModule, MatMenuModule,
@@ -42,7 +41,6 @@ import { UpdatePatientsComponent } from './home/patients/update-patients/update-
     LibraryComponent,
     HealthResourcesComponent,
     CareProviderDirectoryComponent,
-    AddPatientComponent,
     UpdatePatientsComponent,
     SpinnerComponent
 ],

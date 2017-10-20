@@ -11,7 +11,6 @@ import { MyMessagesComponent } from './home/my-messages/my-messages.component';
 import { MyAlertsComponent } from './home/my-alerts/my-alerts.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { PatientsComponent } from './home/patients/patients.component';
-import { AddPatientComponent } from './home/patients/add-patient/add-patient.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -28,8 +27,7 @@ const appRoutes: Routes = [
     { path: 'library', component: LibraryComponent, data: {message: 'LIBRARY'} },
     { path: 'healthResources', component: HealthResourcesComponent, data: {message: 'HEALTH RESOURCES'} },
     { path: 'careProvider', component: CareProviderDirectoryComponent, data: {message: 'CARE PROVIDER'} },
-    { path: 'updatePatients', component: UpdatePatientsComponent, data: {message: 'UPDATE PATIENTS'} },
-    { path: 'addPatient', component: AddPatientComponent}
+    { path: 'updatePatients', component: UpdatePatientsComponent, data: {message: 'UPDATE PATIENTS'} }
 ] }
 ];
 @NgModule({

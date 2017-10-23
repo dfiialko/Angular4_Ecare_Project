@@ -1,6 +1,7 @@
+import { Observable } from 'rxjs/Observable';
 import { ValidatorService } from './../../shared/form_validation/validator.service';
 import { HomeService } from './home.service';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,15 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.css'],
   providers: [HomeService]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit{
   // Receives array of routerLinks and their Names
   websiteLinks = new Array();
   component = 'DASHBOARD';
   constructor(private homeService: HomeService, private validateService: ValidatorService) { }
+
+  @HostListener('window:beforeunload') function(){
+    return false;
+  }
 
 
   ngOnInit() { 

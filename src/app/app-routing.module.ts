@@ -1,3 +1,4 @@
+import { CanDeactivateGuardService } from './home/can-deactivate-guard.service';
 import { AuthGuardService } from './auth-guard.service';
 import { LogInComponent } from './log-in/log-in.component';
 import { HomeComponent } from './home/home.component';

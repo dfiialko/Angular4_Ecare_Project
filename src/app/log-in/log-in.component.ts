@@ -23,7 +23,12 @@ export class LogInComponent implements OnInit {
   constructor(private _dataService: DataService,
               private _validator: ValidatorService,
               private router: Router) { }
-  ngOnInit() { }
+              
+  ngOnInit() {
+    this._validator.loggedIn = false;
+   }
+
+
 
   /* Triggered when JSON request returns success
      Saves token in the Local Storage

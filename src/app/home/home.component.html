@@ -6,9 +6,8 @@
       <!-- Iterate trough links with for loop -->
       <li *ngFor="let link of websiteLinks" 
           class="nav-item d-none d-lg-block" 
-          routerLinkActive="selected_item"
-          (click)="changeHeaderComponent(link[0])">
-        <a routerLink="{{link[1]}}" class="nav-link">
+          routerLinkActive="selected_item">
+        <a routerLink="{{link[1]}}" class="nav-link" (click)="changeHeaderComponent(link[0])">
       <span class="flaticon-{{link[2]}}"></span>{{link[0]}}</a>
     </li> 
     <li *ngFor="let link of websiteLinks" class="nav-item d-block d-lg-none" routerLinkActive="selected_item">

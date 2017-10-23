@@ -1,21 +1,28 @@
+import { User } from './home/patients/update-patients/update-patients.component';
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
+import { Http, Headers, RequestOptions, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
-
+  users: User[] = [];
   result: any;
-  
   constructor(private _http: Http) { }
 
-  getUsers() {
-    console.log(this.result);
-    return this._http.get('http://208.75.74.123:10020/api/getUser')
-      .map(result => this.result = result.json().data);
-
+  getAllUsers() {
+    const authToken = localStorage.getItem('auth_token');
+    console.log(authToken);
+    const headers = new Headers({ 'Authorization': 'Bearer ' + authToken });
+    const options = new RequestOptions({headers: headers});
+    console.log('get');
+    const obs = this._http.get('http://208.75.74.123:10020/api/users', options).map((response: Response) => response.json());
+    return obs;
   }
-
+  // getUsers() {
+  //   console.log(this.result);
+  //   return this._http.get('http://208.75.74.123:10020/api/getUser')
+  //     .map(result => this.result = result.json().data);
+  // }
   // addUser(data)
   // {
   //   console.log("data.service.ts");

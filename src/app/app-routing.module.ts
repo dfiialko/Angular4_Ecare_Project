@@ -17,7 +17,7 @@ import { NgModule } from '@angular/core';
 
 const appRoutes: Routes = [
 { path: 'login', component: LogInComponent},
-{ path: '', component: HomeComponent, children: [
+{ path: '', component: HomeComponent, data:{message: ''}, children: [
     { path: 'patients', component: PatientsComponent, data: {message: 'PATIENTS'} },
     { path: 'alerts', component: MyAlertsComponent, data: {message: 'MY ALERTS'} },
     { path: 'dashboard', component: DashboardComponent, data: {message: 'DASHBOARD'} },

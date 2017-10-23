@@ -14,19 +14,22 @@ export class HomeComponent implements OnInit {
   websiteLinks = new Array();
   component = '';
   constructor(private activeRoute: ActivatedRoute,
-              private homeService: HomeService,
-              private router: Router) {
-              }
+    private homeService: HomeService,
+    private router: Router) {
+  }
 
   ngOnInit() {
     this.websiteLinks = this.homeService.getLinks();
-    this.activeRoute.firstChild.data.subscribe((data:Data)=>{this.component = data['message']});
-   }
+    if (this.activeRoute.snapshot.data['message'] !== '') {
+      this.activeRoute.firstChild.data.subscribe((data: Data) => { this.component = data['message'] });
+    }
+    // this.activeRoute.firstChild.data.subscribe((data:Data)=>{this.component = data['message']});
+  }
 
-   changeHeaderComponent(name){
+  changeHeaderComponent(name) {
     this.component = name;
   }
-  }
+}
 
 
 

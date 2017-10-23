@@ -35,6 +35,8 @@ export class LogInComponent implements OnInit {
       localStorage.setItem('auth_token', this.token[0].access_token);
       this.router.navigate(['/dashboard']);
       this.authorization_token = localStorage.getItem('auth_token');
+      // Take it out later
+      console.log('Saved in local storage');
     }else {
       this.authenticated = false;
     }

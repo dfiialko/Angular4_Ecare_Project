@@ -1,3 +1,4 @@
-<p>
-  care-provider-directory works!
-</p>
+<button class="btn btn-success" (click)="showUsers()">
+    Get all
+</button>
+<p *ngFor="let user of users">{{user.firstName}}</p>

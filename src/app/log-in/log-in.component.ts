@@ -5,8 +5,7 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.css'],
-  providers: [DataService]
+  styleUrls: ['./log-in.component.css']
 })
 
 export class LogInComponent implements OnInit {
@@ -25,6 +24,7 @@ export class LogInComponent implements OnInit {
               private _validator: ValidatorService,
               private router: Router) { }
   ngOnInit() { }
+
   /* Triggered when JSON request returns success
      Saves token in the Local Storage
      Gives access to the token */

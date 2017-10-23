@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
-    constructor(private router: Router, private validateService: ValidatorService) { }
+    constructor(private router: Router, private validateService: ValidatorService) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {  
         if(this.validateService.loggedIn){
@@ -15,5 +15,4 @@ export class AuthGuardService implements CanActivate {
             this.router.navigate(['login']);
         }
     }
-
 }

@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   component = 'DASHBOARD';
   constructor(private homeService: HomeService, private validateService: ValidatorService) { }
 
-  ngOnInit() {
+
+  ngOnInit() { 
     this.websiteLinks = this.homeService.getLinks();
     // this.activeRoute.firstChild.data.subscribe((data:Data)=>{this.component = data['message']});
    }  
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
   signOut(){
     this.validateService.loggedIn = false;
   }
+  
   }
 
 

@@ -15,10 +15,6 @@ export class AppComponent {
   constructor(private router: Router, private validatedService: ValidatorService) { }
 
   ngOnInit() {
-    // this.page = 'logInPage';
-    // if (this.validatedService.loggedIn === false) {
-    //   this.router.navigate(['login']);
-    // }
   }
 
   changePage(type) {

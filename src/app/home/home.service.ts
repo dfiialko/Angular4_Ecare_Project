@@ -19,13 +19,9 @@ export class HomeService {
     constructor() {
 
     }
-
     getLinks() {
         return this.links;
     }
-
-    setComponentName(name) {
-        this.componentName = name;
-    }
+  
 
 }

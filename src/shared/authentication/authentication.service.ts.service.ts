@@ -9,7 +9,9 @@ export class AuthenticationService {
     constructor(private http: Http,
                 private validator: ValidatorService,
                 private router: Router) { }
-    public authenticated = false;
+    public authenticated = true;
+    public error = '';
+    private canactivate = true;
     login(username: string, password: string) {
         if (this.validator.validateInput(username) && this.validator.validateInput(password)) {
             const grant_type = 'password';
@@ -19,12 +21,11 @@ export class AuthenticationService {
             {grant_type, client_id, client_secret, username, password}).
             map(res => res.json()).
             subscribe(data => {this.saveToken(data); },
-                    err => {throw new Error('Not able to login'); },
-                () => this.authenticated = true);
-            // this.authenticated = true;
+                        err => {this.authenticated = false; throw new Error('Invalid Credentials'); });
             return true;
         }else {
-            throw new Error('Not valid credentials supplied');
+            this.error = 'Invalid Email/Password';
+            return false;
         }
     }
 
@@ -57,7 +58,7 @@ export class AuthenticationService {
     checkIfExpired() {
          console.log('checkifexpired');
          if (parseInt(localStorage.getItem('refresh_date'), 10) + 6 <= new Date().getMinutes().valueOf() ) {
-            if (confirm('Still there?')){
+            if (confirm('Still there?')) {
                 this.refresh();
             }else{
                 this.router.navigate(['/login']);

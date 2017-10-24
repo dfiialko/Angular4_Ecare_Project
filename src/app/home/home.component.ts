@@ -1,7 +1,8 @@
+import { Router } from '@angular/router';
 import { AuthenticationService } from './../../shared/authentication/authentication.service.ts.service';
 import { ValidatorService } from './../../shared/form_validation/validator.service';
 import { HomeService } from './home.service';
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,41 +10,36 @@ import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
   styleUrls: ['./home.component.css'],
   providers: [HomeService]
 })
-export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
+export class HomeComponent implements OnInit, OnDestroy {
   timer: any;
   // Receives array of routerLinks and their Names
   websiteLinks = new Array();
   component = 'DASHBOARD';
-  constructor(private homeService: HomeService, 
-              private validateService: ValidatorService,
-              private authService: AuthenticationService) { }
+  constructor(private homeService: HomeService,
+    private validateService: ValidatorService,
+    private authService: AuthenticationService,
+    private router:Router) { }
 
 
   ngOnInit() {
     this.websiteLinks = this.homeService.getLinks();
-    this.timer = setInterval(() => {
-      this.authService.checkIfExpired();
-  }, 10000);
-   }
-   ngOnDestroy(): void {
+    this.timer = setInterval(() => {this.authService.checkIfExpired(); }, 10000);
+    this.router.navigate(['/dashboard']);
+  }
+  ngOnDestroy(): void {
     clearInterval(this.timer);
   }
-   ngAfterViewInit() {
-     console.log('after view init');
-     console.log(this.authService.authenticated);
-    //  if (this.authService.authenticated) {
-    //   this.authService.checkIfExpired();
-    //  }
-     // setInterval(() => (confirm('Confirm you are still here'), this.authService.refresh()), 10000);
-   }
-   changeHeaderComponent(name){
+
+  // Change header signature
+  changeHeaderComponent(name) {
     this.component = name;
   }
 
+  // Perform sign out
   signOut() {
     this.authService.logout();
   }
-  }
+}
 
 
 

@@ -9,13 +9,11 @@ import { DataService } from '../data.service';
   styleUrls: ['./log-in.component.css']
 })
 
-export class LogInComponent implements OnInit {
+export class LogInComponent implements OnInit  {
 
   loggedIn = false;
-  token: Array<{access_token: string}> = [];
-  authorization_token: string;
-  authenticated: boolean;
   showhide = true;
+  authenticated = true;
   errorMessage: string;
   @ViewChild('email') emailRef: ElementRef;
   @ViewChild('password') passwordRef: ElementRef;
@@ -25,51 +23,39 @@ export class LogInComponent implements OnInit {
               private _validator: ValidatorService,
               private router: Router,
               private authService: AuthenticationService) { }
-  ngOnInit() { 
+
+  ngOnInit() {
+    // Clear local storage on logout
     this.authService.logout();
   }
 
-  /* Triggered when JSON request returns success
-     Saves token in the Local Storage
-     Gives access to the token */
+
+  // Check if login successfull
   login_attempt(attempt) {
-    this.authenticated = attempt;
-    this.showhide = true;
     if (attempt) {
       setTimeout(() => this.router.navigate(['/dashboard']), 1000);
+    }else {
+      console.log(this.authService.error);
+        this.errorMessage = this.authService.error;
+        this.authenticated = false;
     }
+
   }
   // Happens when Login button clicked
   logInClick() {
     this.showhide = false;
-    const username = this.emailRef.nativeElement.value;
-    const password = this.passwordRef.nativeElement.value;
-    // console.log('log in clicked');
-    // const login_data = {
-    //   'grant_type': 'password',
-    //   'client_id': 'clinician_app',
-    //   'client_secret': 'yy9rur9r8748',
-    //   'username': username,
-    //   'password': password
-    // };
-    // // Validate input
-    // if (this._validator.validateInput(username) && this._validator.validateInput(password)) {
-    // // Use service to send login request
-    // this._dataService.logIn(login_data).subscribe(
-    //   data => this.token.push(data),
-    //   error => {this.errorMessage = 'Email or password is incorrect'; this.login_attempt(false); },
-    //   () => { this.authenticated = true;
-    //           this.login_attempt(true); });
-    //  }else {
-    //    this.authenticated = false;
-    //    this.errorMessage = this._validator.errorMessage;
-    //  }
+    // Clear local storage
     this.authService.logout();
-    if (this.authService.login(username, password)) {
+    // Check if login successfull
+
+    
+    if (this.authService.login(this.emailRef.nativeElement.value, this.passwordRef.nativeElement.value)) {
       this.login_attempt(true);
     }else {
+      this.errorMessage = 'Invalid Credentials';
       this.login_attempt(false);
     }
+
 }
 
   // Triggers when the password reset link was clicked

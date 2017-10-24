@@ -11,9 +11,6 @@ export class DashboardComponent implements OnInit {
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
- 
   }
-  consoleLog() {
-    this.authService.login('doctorD', 'doctorD1234');
-  }
+
 }

@@ -9,8 +9,7 @@ export class DataService {
   result: any;
 
   private token;
-  
-  constructor(private _http: Http,) { }
+  constructor(private _http: Http) { }
 
   // addUser(data)
   // {

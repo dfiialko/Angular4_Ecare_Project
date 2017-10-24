@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../shared/authentication/authentication.service.ts.service';
 import { ValidatorService } from './../shared/form_validation/validator.service';
 import { AuthGuardService } from './auth-guard.service';
 import { AppRouting } from './app-routing.module';
@@ -21,6 +22,7 @@ import { LibraryComponent } from './home/library/library.component';
 import { HealthResourcesComponent } from './home/health-resources/health-resources.component';
 import { CareProviderDirectoryComponent } from './home/care-provider-directory/care-provider-directory.component';
 import { DataService } from './data.service';
+
 // Material Designs
 import {MatButtonModule, MatCardModule, MatMenuModule,
   MatToolbarModule, MatIconModule, MatTableModule, MatTabsModule,
@@ -51,18 +53,18 @@ import { UpdatePatientsComponent } from './home/patients/update-patients/update-
     AppRouting,
     FormsModule,
     HttpModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatCardModule,
-     MatMenuModule, 
-     MatToolbarModule, 
-     MatIconModule, 
+     MatMenuModule,
+     MatToolbarModule,
+     MatIconModule,
      MatTableModule,
      BrowserAnimationsModule ,
      MatTabsModule,
      MatProgressSpinnerModule,
      MatCheckboxModule
   ],
-  providers: [DataService, AuthGuardService, ValidatorService],
+  providers: [DataService, AuthGuardService, ValidatorService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

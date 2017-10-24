@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../shared/authentication/authentication.service.ts.service';
 import { Router } from '@angular/router';
 import { ValidatorService } from './../../shared/form_validation/validator.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
@@ -22,8 +23,11 @@ export class LogInComponent implements OnInit {
 
   constructor(private _dataService: DataService,
               private _validator: ValidatorService,
-              private router: Router) { }
-  ngOnInit() { }
+              private router: Router,
+              private authService: AuthenticationService) { }
+  ngOnInit() { 
+    this.authService.logout();
+  }
 
   /* Triggered when JSON request returns success
      Saves token in the Local Storage
@@ -32,11 +36,7 @@ export class LogInComponent implements OnInit {
     this.authenticated = attempt;
     this.showhide = true;
     if (attempt) {
-      localStorage.setItem('auth_token', this.token[0].access_token);
-      this.router.navigate(['/dashboard']);
-      this.authorization_token = localStorage.getItem('auth_token');
-    }else {
-      this.authenticated = false;
+      setTimeout(() => this.router.navigate(['/dashboard']), 1000);
     }
   }
   // Happens when Login button clicked
@@ -44,26 +44,32 @@ export class LogInComponent implements OnInit {
     this.showhide = false;
     const username = this.emailRef.nativeElement.value;
     const password = this.passwordRef.nativeElement.value;
-    console.log('log in clicked');
-    const login_data = {
-      'grant_type': 'password',
-      'client_id': 'clinician_app',
-      'client_secret': 'yy9rur9r8748',
-      'username': username,
-      'password': password
-    };
-    // Validate input
-    if (this._validator.validateInput(username) && this._validator.validateInput(password)) {
-    // Use service to send login request
-    this._dataService.logIn(login_data).subscribe(
-      data => this.token.push(data),
-      error => {this.errorMessage = 'Email or password is incorrect'; this.login_attempt(false); },
-      () => { this.authenticated = true;
-              this.login_attempt(true); });
-     }else {
-       this.authenticated = false;
-       this.errorMessage = this._validator.errorMessage;
-     }
+    // console.log('log in clicked');
+    // const login_data = {
+    //   'grant_type': 'password',
+    //   'client_id': 'clinician_app',
+    //   'client_secret': 'yy9rur9r8748',
+    //   'username': username,
+    //   'password': password
+    // };
+    // // Validate input
+    // if (this._validator.validateInput(username) && this._validator.validateInput(password)) {
+    // // Use service to send login request
+    // this._dataService.logIn(login_data).subscribe(
+    //   data => this.token.push(data),
+    //   error => {this.errorMessage = 'Email or password is incorrect'; this.login_attempt(false); },
+    //   () => { this.authenticated = true;
+    //           this.login_attempt(true); });
+    //  }else {
+    //    this.authenticated = false;
+    //    this.errorMessage = this._validator.errorMessage;
+    //  }
+    this.authService.logout();
+    if (this.authService.login(username, password)) {
+      this.login_attempt(true);
+    }else {
+      this.login_attempt(false);
+    }
 }
 
   // Triggers when the password reset link was clicked

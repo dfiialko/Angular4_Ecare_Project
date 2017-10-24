@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../shared/authentication/authentication.service.ts.service';
 import { PaginationServiceService } from './../../pagination-service.service';
 import { Users } from './users.model';
 import { DataService } from './../../data.service';
@@ -11,7 +12,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CareProviderDirectoryComponent implements OnInit {
 
-  constructor(private _dataService: DataService, private pagination:PaginationServiceService) { }
+  constructor(private _dataService: DataService, 
+              private pagination: PaginationServiceService,
+              private authService: AuthenticationService) { }
 
   users: Array<Users> = [];
 
@@ -21,4 +24,6 @@ export class CareProviderDirectoryComponent implements OnInit {
 
    console.log(this.users + ' users from provider');
   }
+
+ 
 }

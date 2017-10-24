@@ -16,8 +16,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const appRoutes: Routes = [
-{ path: 'login', component: LogInComponent},
-{ path: '', canActivate:[AuthGuardService], component: HomeComponent, children: [
+{ path: 'login', component: LogInComponent, pathMatch: 'full'},
+   { path: '', canActivate: [AuthGuardService], component: HomeComponent, children: [
+    // { path: '', component: HomeComponent, children: [
     { path: 'patients', component: PatientsComponent, data: {message: 'PATIENTS'} },
     { path: 'alerts', component: MyAlertsComponent, data: {message: 'MY ALERTS'} },
     { path: 'dashboard', component: DashboardComponent, data: {message: 'DASHBOARD'} },
@@ -29,7 +30,7 @@ const appRoutes: Routes = [
     { path: 'healthResources', component: HealthResourcesComponent, data: {message: 'HEALTH RESOURCES'} },
     { path: 'careProvider', component: CareProviderDirectoryComponent, data: {message: 'CARE PROVIDER'} },
     { path: 'updatePatients', component: UpdatePatientsComponent, data: {message: 'UPDATE PATIENTS'} }
-] }
+]}
 ];
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],

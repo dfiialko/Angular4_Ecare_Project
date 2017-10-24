@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../shared/authentication/authentication.service.ts.service';
 import { Component, OnInit} from '@angular/core';
 
 @Component({
@@ -7,10 +8,12 @@ import { Component, OnInit} from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
  
   }
-
+  consoleLog() {
+    this.authService.login('doctorD', 'doctorD1234');
+  }
 }

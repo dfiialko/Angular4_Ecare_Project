@@ -16,9 +16,9 @@ export class AppComponent {
 
   ngOnInit() {
     // this.page = 'logInPage';
-    if (this.validatedService.loggedIn === false) {
-      this.router.navigate(['login']);
-    }
+    // if (this.validatedService.loggedIn === false) {
+    //   this.router.navigate(['login']);
+    // }
   }
 
   changePage(type) {

@@ -1,0 +1,74 @@
+<div id="homeContainer" class="w-100">
+  <!-- Sidebar for laptop users -->
+  <ul id="sidebar" class="sticky-top w-25 h-100 d-none d-md-flex nav flex-column nav-pills float-left bg-dark">
+    <img class="img-fluid" id="e-care" src="./assets/e-care-home.PNG" alt="e-care">
+    <div class="container" id="sidebar_nav_container">
+      <!-- Iterate trough links with for loop -->
+      <li *ngFor="let link of websiteLinks" 
+          class="nav-item d-none d-lg-block" 
+          routerLinkActive="selected_item"
+          (click)="changeHeaderComponent(link[0])">
+        <a routerLink="{{link[1]}}" class="nav-link">
+      <span class="flaticon-{{link[2]}}"></span>{{link[0]}}</a>
+    </li> 
+    <li *ngFor="let link of websiteLinks" class="nav-item d-block d-lg-none" routerLinkActive="selected_item">
+        <a routerLink="{{link[1]}}" class="nav-link">
+      <span class="flaticon-{{link[2]}}"></span>{{link[3]}}</a>
+    </li>
+    <!-- ################################################# -->
+    </div> 
+  </ul>
+  <!-- The END of Sidebar for laptop users -->
+  
+  <!-- Togglable Topbar -->
+  <nav id="topbar" class=" navbar sticky-top navbar-expand-md navbar-light m-auto">
+    <span id="arrowLeft" class="glyphicon glyphicon-menu-left"></span>
+    <a class="navbar-brand m-auto" href="#">{{ component }}</a>
+    <button class="navbar-toggler m-auto" data-toggle="collapse" data-target="#topNav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="topNav">
+      <ul class="navbar-nav float-right" style="flex-direction:row">
+        <li class="nav-item">
+          <button class="btn btn-primary e_care_button"><a class="nav-link" style="text-decoration: none;color:white">My Account</a></button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" (click)="signOut()">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--mobile menu *************************************************-->
+  <ul class="h-100 sticky-top d-md-none nav flex-column float-left bg-dark mt" style="width:15%;" id="sidebar">
+      <li *ngFor="let link of websiteLinks" 
+          class="nav-item align-self-center" 
+          routerLinkActive="selected_item"
+          (click)="changeHeaderComponent(link[0])">
+          <a routerLink="{{link[1]}}" class="nav-link">
+        <span class="flaticon-{{link[2]}}"></span></a>
+      </li> 
+  </ul>
+  <div class="d-inline w-75 float-left" id="contentContainer">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="modal mt-5" style="display:block;" [ngStyle]="{'display': idle ? 'block' : 'none'}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="text-center">ARE YOU STILL HERE?</h3>
+        </div>
+        <div class="modal-body">
+          <p class="text-center text-danger">Your session is going to be expired in</p>
+          <p class="display-1 text-danger text-center">{{isHere}}</p>
+        </div>
+        <div class="modal-footer mb-4">
+          <button class="btn btn-primary btn-sm btn-md-lg col-10 mx-auto" (click)="active()">I AM HERE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+</div>

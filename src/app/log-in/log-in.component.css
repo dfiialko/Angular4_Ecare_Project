@@ -1,0 +1,19 @@
+#login_spinner{
+  position: absolute;
+  margin: auto;
+  left:25%;
+  right:25%;
+  top:50%;
+  bottom:50%;
+  z-index: 3000;
+  opacity: 0.8;
+}
+
+#login_container{
+  position: absolute;
+  background-color: rgba(25, 40, 63, 1);
+  top:0px;
+  bottom:0px;
+  min-width:100%;
+  overflow: auto;
+}

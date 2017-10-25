@@ -1,0 +1,56 @@
+<div style="margin-left:3%;">
+    
+      <div class="row mt-5 pb-0">
+        <div class="col-10">
+          <h4 class="e_care_h3">Total Care Provider Enrolled: {{users.length}}</h4>
+        </div>
+      </div>
+    
+      <div class="form-group form-inline" style="margin-top:4%; margin-bottom:4%;">
+        <div class="input-group ml-2">
+          <input type="text" class="form-control" placeholder="Search" size="55" />
+          <span class="input-group-btn"> <button class="btn btn-primary e_care_button">GO</button></span>
+        </div>
+      </div>
+    
+      <div id="border" class="col">
+        <table class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>UserName</th>
+              <th>Email</th>
+              <th>Date Created</th>
+              <th>Date Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users | slice:pagination.fromIndex:pagination.toIndex; let i = index">
+              <td class="pt-4">{{user.firstName}} {{user.lastName}} </td>
+              <td class="pt-4">{{user.username}} </td>
+              <td class="pt-4">{{user.email}} </td>
+              <td class="pt-4">{{user.created_at}} </td>
+              <td class="pt-4">{{user.updated_at}} </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <!-- Pagination  -->
+        <nav>
+          <ul class="pagination" style="color:gray;">
+            <li class="page-item">
+              <a class="page-link" (click)="pagination.previousClickPagination()">Previous</a>
+            </li>
+            <ng-container *ngFor="let user of users;let i=index;">
+              <li class="page-item" *ngIf="(i+1)%5==0">
+                <a class="page-link" (click)="pagination.paginationDisplayNext((i+1)/5)">{{(i+1)/5}}</a></li>
+            </ng-container>
+            <li class="page-item" *ngIf="users.length < 5">
+                <a class="page-link">1</a>
+              </li>
+            <li class="page-item"><a class="page-link" (click)="pagination.nextClickPagination(users)">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+     
+    </div>

@@ -1,0 +1,29 @@
+{
+    "port": 10000,
+    "security": {
+        "JWT_ISSUER" : "e-CareSart API",
+        "JWT_SECRET_FOR_ACCESS_TOKEN" : "XT6PRpRuehFsyMa2",
+        "JWT_SECRET_FOR_REFRESH_TOKEN" : "JWPVzFWkqGxoE2C2",
+        "JWT_ACCESS_TOKEN_EXPIRY_SECONDS" : 3600,   
+        "JWT_REFRESH_TOKEN_EXPIRY_SECONDS" : 1209600
+    },
+    "mongoose": {
+        "uri": "mongodb://localhost/ecaresmart-api-dev"
+    },
+    "default": {
+        "api": {
+            "version" : "v1"
+        },
+        "user": {
+            "username": "doctorD",
+            "password": "doctorD1234",
+            "email": "doctodd@example.com"
+        },
+        "client": {
+            "name": "Clinician Web App",
+            "clientId": "clinician_app",
+            "clientSecret": "yy9rur9r8748",
+            "isTrusted": "true"
+        }
+    }
+}

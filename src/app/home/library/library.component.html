@@ -1,0 +1,35 @@
+
+<div class="container-fluid" style="margin-left:3%">
+  <div class="row d-flex">
+    <div class="col-12 mt-5">
+      <h4 class="e_care_h3">Educational material help understanding your condition and treatment</h4>
+    </div>
+    <div class="col-11 align-top text-right my-2 mt-5">
+      <a routerLink="../addPatient" class="btn btn-primary btn-lg p-3 px-5 e_care_button mb-0" id="add_patient_button"><h4 class="e_care_h3">+ ADD CONTENT</h4></a>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+          <button mat-button (click)="displayAll()" class="library_category_button" #focusButton>VIEW ALL</button>
+          <button mat-button [matMenuTriggerFor]="menu" class="library_category_button">BY CATEGORY<span class="caret"></span></button>
+            <mat-menu #menu="matMenu">    
+              <button mat-menu-item id="button-mat">BY CATEGORY</button>
+            </mat-menu>      
+        </div>
+    </div>
+    <div class="row">
+      <div class="container-fluid col-11 ml-0 e_care_border" id="library_card">
+         <ul class="form-inline" >
+           <li *ngFor="let card of cards;" class="col-lg-4 my-3">
+             <img class="img-fluid" id="card_image" src="../../../assets/{{card}}.jpg">
+             <span class="card_description col-lg-9 col-md-11 col-sm-10"><b>Taking your blood pressure</b></span>
+             <span class="card_description col-lg-3 col-md-1 col-sm-2 text-right" id="edit-card"><a>EDIT</a></span>
+            </li>
+         </ul>
+    </div>
+  </div>
+  <div id="bottom" class="ml-0">
+      <a href=""><span class="flaticon-download-1"></span> Archieve</a>
+      <a href=""><span class="flaticon-garbage"></span> Delete</a>
+    </div>

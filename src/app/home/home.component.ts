@@ -38,23 +38,21 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.websiteLinks = this.homeService.getLinks();
-    // this.timer = setInterval(() => {this.authService.checkIfExpired(); }, 10000);
     this.router.navigate(['/dashboard']);
 
     this.idleInterval = setInterval(() => {
       this.idleTime++; console.log('idleTime: ' + this.idleTime);
-      // if (this.idleTime === parseInt(localStorage.getItem('refresh_date')))
-      if (this.idleTime === 5) {
+      if (this.idleTime === parseInt(localStorage.getItem('refresh_date'))){
+      // if (this.idleTime === 5) {
         this.idle = true;
         if (this.idle === true) {
-          this.isHereinterval = setInterval(() => { this.isHere--; if(this.isHere < 0){ alert('Your session has expired');this.router.navigate(['login']);}}
+          this.isHereinterval = setInterval(() => { this.isHere--; if(this.isHere == -1){ alert('Your session has expired');this.router.navigate(['login']);}}
           ,1000);
         }
       }
     }, 1000);
   }
   ngOnDestroy() {
-    // clearInterval(this.timer);
     this.idle = false;
     clearInterval(this.isHereinterval);
     clearInterval(this.idleInterval);
@@ -62,6 +60,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   active() {
     this.idle = false;
+    clearInterval(this.isHereinterval);
     this.authService.refresh();
   }
 

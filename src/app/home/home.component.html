@@ -21,7 +21,7 @@
   <!-- The END of Sidebar for laptop users -->
   
   <!-- Togglable Topbar -->
-  <nav id="topbar" class=" navbar sticky-top navbar-expand-md navbar-light m-auto">
+  <nav id="topbar" class="navbar sticky-top navbar-expand-md navbar-light m-auto">
     <span id="arrowLeft" class="glyphicon glyphicon-menu-left"></span>
     <a class="navbar-brand m-auto" href="#">{{ component }}</a>
     <button class="navbar-toggler m-auto" data-toggle="collapse" data-target="#topNav"><span class="navbar-toggler-icon"></span></button>
@@ -42,9 +42,7 @@
   <!--mobile menu *************************************************-->
   <ul class="h-100 sticky-top d-md-none nav flex-column float-left bg-dark mt" style="width:15%;" id="sidebar">
       <li *ngFor="let link of websiteLinks" 
-          class="nav-item align-self-center" 
-          routerLinkActive="selected_item"
-          (click)="changeHeaderComponent(link[0])">
+          class="nav-item align-self-center">
           <a routerLink="{{link[1]}}" class="nav-link">
         <span class="flaticon-{{link[2]}}"></span></a>
       </li> 

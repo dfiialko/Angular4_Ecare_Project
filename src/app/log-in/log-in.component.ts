@@ -48,11 +48,7 @@ export class LogInComponent implements OnInit {
     const password = this.passwordRef.nativeElement.value;
     console.log('log in clicked');
     const login_data = {
-      'grant_type': 'password',
-      'client_id': 'clinician_app',
-      'client_secret': 'yy9rur9r8748',
-      'username': username,
-      'password': password
+  //login data goes here
     };
     // Validate input
     if (this._validator.validateInput(username) && this._validator.validateInput(password)) {

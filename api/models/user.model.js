@@ -5,16 +5,7 @@ var Schema = mongoose.Schema;
 //var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 
-var UserSchema = new mongoose.Schema({
-	username: { type: String, required: true, unique: true },
-	email: { type: String, required: true },
-	password: { type: String, required: true },
-	//token: { type: String, default: '' },
-	//isPatient: {type:Number, default:-1}, //0 = clinician, 1 = patient
-	//updated_at: { type: Date, default: Date.now },
-    created_at: { type: Date, default: Date.now }
-    //role: { type: Schema.Types.ObjectId, ref: 'Role', required: true }
-});
+
 
 //protect the password
 UserSchema.pre('save', function(next) {

@@ -1,0 +1,220 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: e-CareSmart API
+  x-logo:
+    url: /images/ecaresmart-sm.png
+  contact:
+    email: info@cassidye-care.com
+  description: |
+    # Overview
+    The e-CareSmart API is a RESTful API that provides data exchange between the e-CareSmart platform's mobile and web applications.
+    
+    The e-CareSmart API supports JSON formatted requests and responses for sending and receiving data. POST bodies can be sent as application/json, application/x-www-form-urlencoded, or multipart/form-data. However the API will only return JSON. The API lives at https://localhost/api/. All requests must use HTTPS.
+    
+    # Authentication
+    [OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749) is the main means of authorising requests to the API.
+    
+    See [POST /oauth/token](#operation/token) for details on the request and response formats.
+    
+    <!-- ReDoc-Inject: <security-definitions> -->
+    
+# during dev, should point to your local machine
+host: 127.0.0.1:10020
+# basePath prefixes all resource paths 
+basePath: /api
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/x-www-form-urlencoded
+  - application/json
+  - multipart/form-data
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+securityDefinitions:
+  ecaresmart_auth:
+    description: |
+      OAuth2 uses the Resource Owner Password Flow. The user's username and password are sent to the authorization server in exchange for an access token and a refresh token. All endpoints require authentication, except those that are part of the OAuth2 authorization flow. Make sure your access token is included in your requests by including the Authorization: Bearer header with every request.
+    type: oauth2
+    tokenUrl: https://localhost:10020/api/oauth/token
+    flow: password
+tags:
+  - name: oauth2
+    description: Authentication operations
+x-tagGroups:
+  - name: OAuth2 authentication
+    tags:
+      - oauth2
+  - name: Clinician API Reference
+    tags:
+      - organization
+      #- group
+      #- coach
+      #- reward program
+  - name: Patient API Reference
+    tags:
+      - patient
+      #- plan
+      #- action
+      #- bundle
+      #- metric
+      #- reward program activation
+      #- reward
+      #- reward earning
+      #- reward earning fulfillment
+      #- email history
+paths:
+  /oauth/token:
+    post:
+      tags:
+        - oauth2
+      summary: Request an access token
+      description: Create an OAuth 2.0 Bearer token. An app sends its own credentials (the Client ID and Client Secret) to be authenticated against the end point, then the user is authentocated using their credentials (username and password). Clinicians are only allowed to log in using the Clinician App and patients are only allowed to use the Patient App.
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/CreateTokenRequest'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: "#/definitions/AccessTokenResponse"  
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/SaveErrorResponse'
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/SaveErrorResponse'
+        '409':
+          description: Invalid Request
+          schema:
+            $ref: '#/definitions/SaveErrorResponse'
+      security:
+        - ecaresmart_auth: []
+  /swagger:
+    x-swagger-pipe: swagger_raw
+    
+# complex objects have schema definitions
+definitions:
+  # BEGIN /oauth/token definitions
+  CreateTokenRequest:
+    type: object
+    required:
+      - grant_type
+      - client_id
+      - client_secret
+    properties:
+      grant_type:
+        type: string
+        enum:
+          - password
+          - refresh_token
+        example: password
+      client_id:
+        type: string
+        description: e-CareSmart approved clients only. 
+        example: 'clinician_app'
+      client_secret:
+        type: string
+        description: e-CareSmart approved clients only. 
+        example: 'yy9rur9r8748'
+      username:
+        type: string
+        description: e-CareSmart user credentials' username. Username is required if grant_type is "password"
+        example: 'doctorD'
+      password:
+        type: string
+        description: e-CareSmart user credentials' password. Password is required if grant_type is "password"
+        example: 'doctorD1234'
+      refresh_token:
+        type: string
+        description: e-CareSmart approved clients only. Refresh_token is required if grant_type is "refresh_token" 
+        example: 'I6MTUwMzk5MTY5MywiZXhwIjoxNTAzOTk1MjkzfQ.xkSo7AJ7YSfnVTQTQje65bMh_-gey_RpS_IwFWv6jLQ'
+    example:
+      {
+        "grant_id": "password",
+        "client_id": "clinician_app",
+        "client_secret": "yy9rur9r8748",
+        "username": "doctorD",
+        "password": "doctorD1234"
+      }
+  AccessTokenResponse:
+    type: object
+    required:
+      - access_token
+      - refresh_token
+      - expires_in
+      - token_type
+    properties:
+      access_token:
+        type: string
+        example: 'I6MTUwMzk5MTY5MywiZXhwIjoxNTAzOTk1MjkzfQ.xkSo7AJ7YSfnVTQTQje65bMh_-gey_RpS_IwFWv6jLQ'
+      refresh_token:
+        type: string
+        example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjJJWkVabmNlRDZtY21haE00QU9jWlFqe'
+      expires_in:
+        type: integer
+        example: 3600
+      token_type:
+        type: string
+        enum:
+          - Bearer
+        example: 'Bearer'
+    example:
+      {
+        "access_token": "I6MTUwMzk5MTY5MywiZXhwIjoxNTAzOTk1MjkzfQ.xkSo7AJ7YSfnVTQTQje65bMh_-gey_RpS_IwFWv6jLQ",
+        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjJJWkVabmNlRDZtY21haE00QU9jWlFqe",
+        "expires_in": "3600",
+        "token_type": "Bearer"
+      }
+  # END /oauth/token definitions
+  SaveErrorResponse:
+    type: object
+    properties:
+      errors:
+        $ref: '#/definitions/Error'
+    example:
+      {
+        "errors": [{
+          "code": "Unauthorized",
+          "detail": "A valid bearer token is required",
+          "status":"401"
+          }
+        ]
+      }
+  Error:
+    type: object
+    properties:
+      status:
+        type: string
+      code:
+        type: string
+        enum:
+          - Forbidden
+          - InvalidParameter
+          - InvalidBodyParameter
+          - ResourceNotFound
+          - Unauthorized
+          - InvalidCredentials
+          - InvalidGrantType
+      title:
+        type: string
+      detail:
+        type: string
+      source:
+        type: object
+        properties:
+          parameter: 
+            type: string
+          pointer:
+            type: string
+            

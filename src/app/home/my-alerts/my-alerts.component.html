@@ -1,0 +1,28 @@
+<div id="border">
+    <table class="table table-hover table-responsive">
+      <thead>
+        <tr>
+          <th>Patient Name</th>
+          <th>Date Received</th>
+          <th>Alert</th>
+          <th>Status</th>
+          <th>Send Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patientAlert">
+          <td><a [ngStyle]="{'color': patient.status === 'High Risk' ? 'red' : '#585656'}" href="#">{{patient.name}}</a></td>
+          <td>{{patient.dateReceived}}</td>
+          <td><a [ngStyle]="{'color': patient.status === 'High Risk' ? 'red' : '#585656'}" href="#">{{patient.alert}}</a></td>
+          <td *ngIf="patient.status === 'New'">
+            <a class="btn btn-info active" aria-disabled="true"><strong style="color:white;">New</strong></a></td>
+          <td *ngIf="patient.status === 'High Risk'"> 
+            <a class="btn btn-danger active" aria-disabled="true"><strong style="color:white;">High Risk</strong></a></td>
+          <td *ngIf="patient.status === 'Completed'">
+            <a class="btn btn-success active" aria-disabled="true"><strong style="color:white;">Completed</strong></a></td>
+          <td class="d-lg-none"><a href="#"><span class="flaticon-envelope"></span></a></td>
+          <td class="d-none d-lg-block"><a href="#"><span class="flaticon-envelope"></span> {{patient.sendMessage}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>

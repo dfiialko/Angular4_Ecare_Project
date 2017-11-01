@@ -1,0 +1,83 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "e-CareSmart API",
+    "x-logo": {
+      "url": "/images/ecaresmart-sm.png"
+    },
+    "contact": {
+      "email": "info@cassidye-care.com"
+    },
+    "description": "# Overview\nThe e-CareSmart API is a RESTful API that provides data exchange between the e-CareSmart platform's mobile and web applications.\n\nThe e-CareSmart API supports JSON formatted requests and responses for sending and receicing data. Data communication is done over a secured SSL channel.\n\n# Authentication\n"
+  },
+  "host": "localhost:10020",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/hello": {
+      "x-swagger-router-controller": "hello_world",
+      "get": {
+        "description": "Returns 'Hello' to the caller",
+        "operationId": "hello",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "The name of the person to whom to say hello",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/HelloWorldResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/swagger": {
+      "x-swagger-pipe": "swagger_raw"
+    }
+  },
+  "definitions": {
+    "HelloWorldResponse": {
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "ErrorResponse": {
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

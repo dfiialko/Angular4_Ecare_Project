@@ -2,9 +2,7 @@
 
 var mongoose = require('mongoose'); 
 var Schema = mongoose.Schema; 
-
 var medicationSchema = require('../medication/medication.model'); 
-
 var paginate = require('mongoose-paginate'); 
 
 var TaskSchema = new mongoose.Schema({ 

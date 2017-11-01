@@ -4,8 +4,6 @@ var _ = require('lodash');
 var async = require('async'); 
 var moment = require('async'); 
 var Task = require('./treatment-task.model'); 
-
-
 /** 
 * Get a list of all tratment tasks 
 */ 

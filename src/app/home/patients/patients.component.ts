@@ -48,12 +48,13 @@ export class PatientsComponent implements OnInit {
     // this._dataService.getUsers().subscAribe(res => this.users = res);
   }
 
+  // Will get certain user according to the value passed
   getUser(passedUserValue) {
-    console.log(passedUserValue);
     this.page = 'updatePatients';
     this.patient = passedUserValue;
-
+ 
   }
+  // Use dataservice method to delete user profile
   deleteUser(userID) {
     this._dataService.deleteUser(userID).subscribe();
     // this._dataService.getUsers().subscribe(res => this.users = res);
@@ -62,6 +63,7 @@ export class PatientsComponent implements OnInit {
     this.page = pageName.pagename;
   }
   // ************* Pagination ***************//
+  // Later move this to separate service for re-use
   previousClickPagination() {
     if (this.fromIndex >= 5) {
       this.fromIndex -= 5;

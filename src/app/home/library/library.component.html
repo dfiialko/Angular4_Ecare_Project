@@ -1,10 +1,10 @@
 
-<div class="container-fluid pl-5">
-  <div class="row d-inline mb-0 pb-0">
-    <div class="col-12 align-text-bottom ">
-      <h5 class="e_care_h3">Educational material that will help you understand your condition and treatment</h5>
+<div class="container-fluid" style="margin-left:3%">
+  <div class="row d-flex">
+    <div class="col-12 mt-5">
+      <h4 class="e_care_h3">Educational material help understanding your condition and treatment</h4>
     </div>
-    <div class="col-12 align-top text-xl-right text-sm-right text-md-right mb-0 pb-0">
+    <div class="col-11 align-top text-right my-2 mt-5">
       <a routerLink="../addPatient" class="btn btn-primary btn-lg p-3 px-5 e_care_button mb-0" id="add_patient_button"><h4 class="e_care_h3">+ ADD CONTENT</h4></a>
     </div>
   </div>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row">
-      <div class="container-fluid e_care_border" id="library_card">
+      <div class="container-fluid col-11 ml-0 e_care_border" id="library_card">
          <ul class="form-inline" >
            <li *ngFor="let card of cards;" class="col-lg-4 my-3">
              <img class="img-fluid" id="card_image" src="../../../assets/{{card}}.jpg">

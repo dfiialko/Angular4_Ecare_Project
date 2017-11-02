@@ -1,5 +1,4 @@
 import { Component, OnInit, ElementRef, Renderer, ViewChild } from '@angular/core';
-
 @Component({
   selector: 'app-library',
   templateUrl: './library.component.html',
